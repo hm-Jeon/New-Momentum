@@ -1,0 +1,41 @@
+section.center .clock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.center .clock .AM_PM {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.center .clock .AM_PM span {
+  color: var(--dark-gray);
+  font-size: 1.5rem;
+}
+
+section.center .clock .AM_PM span.active {
+  color: var(--spotify-green);
+  font-weight: 500;
+}
+
+section.center .clock .time {
+  padding-left: 0.5rem;
+  font-size: 8rem;
+  font-weight: 500;
+}
+/*# sourceMappingURL=clock.css.map */

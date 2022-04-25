@@ -1,0 +1,116 @@
+@import url("http://fonts.cdnfonts.com/css/gotham");
+* {
+  color: var(--black);
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Gotham";
+}
+
+.title {
+  font-weight: 500;
+}
+
+.root {
+  height: 100%;
+  padding: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: var(--dark-gray);
+}
+
+.root section {
+  height: 100%;
+}
+
+.root .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #ffffff;
+  border-radius: 2rem;
+}
+
+.root .container section {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 2rem;
+}
+
+.root .container .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30%;
+  background-color: var(--spotify-green);
+  border-radius: 2rem 0 0 2rem;
+}
+
+.root .container .left div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.root .container .left div .title h1 {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.root .container .left div .content {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.root .container .left .top {
+  height: 40%;
+}
+
+.root .container .left .bottom {
+  height: 60%;
+}
+
+.root .container .center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 40%;
+}
+
+.root .container .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30%;
+}
+
+.root .container .right .title h1 {
+  font-size: 1.5rem;
+}
+/*# sourceMappingURL=root.css.map */

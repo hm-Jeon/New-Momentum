@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet" />
+
+    <title>New Momentum</title>
+  </head>
+  <body>
+    <div class="root">
+      <section class="container">
+        <section class="left">
+          <div class="top">
+            <div class="title">
+              <h1>Current Weather</h1>
+            </div>
+            <div class="content"></div>
+          </div>
+          <div class="bottom">
+            <div class="title">
+              <h1>Daily Weather</h1>
+            </div>
+            <div class="content"></div>
+          </div>
+        </section>
+        <section class="center">
+          <div class="greeting">
+            <span>Welcome! User.</span>
+          </div>
+          <div class="clock">
+            <div class="AM_PM">
+              <span class="AM active">AM</span>
+              <span class="PM">PM</span>
+            </div>
+            <span class="time">02:10</span>
+          </div>
+          <div class="quote">
+            <span class="text">FOREVER YOUNG...</span>
+            <span class="author">BLACKPINK</span>
+          </div>
+        </section>
+        <section class="right">
+          <div class="title">
+            <h1>To Do List</h1>
+          </div>
+          <div class="todo-form">
+            <form>
+              <input type="text" placeholder="Write new To do" required />
+            </form>
+          </div>
+          <div class="todo-list"></div>
+        </section>
+      </section>
+    </div>
+    <script src="src/ts/app.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+.right .todo-form {
+  width: 100%;
+  padding: 1rem 0 0;
+}
+
+.right .todo-form form {
+  position: relative;
+}
+
+.right .todo-form form input {
+  width: 100%;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid var(--dark-gray);
+  font-size: 1rem;
+  line-height: 2.5rem;
+}
+
+.right .todo-form form::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  content: "";
+  background-color: var(--spotify-green);
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+
+.right .todo-form form:hover::after, .right .todo-form form:focus-within::after {
+  width: 100%;
+}
+
+.right .todo-list {
+  height: 100%;
+  padding-top: 1rem;
+}
+/*# sourceMappingURL=todo.css.map */

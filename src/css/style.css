@@ -1,0 +1,8 @@
+@import "./variables.css";
+@import "./reset.css";
+
+@import "./root.css";
+@import "./clock/clock.css";
+@import "./quote/quote.css";
+@import "./greeting/greeting.css";
+@import "./todo/todo.css";

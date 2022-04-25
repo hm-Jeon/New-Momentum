@@ -1,0 +1,29 @@
+section.center {
+  .clock {
+    display: flex;
+    align-items: center;
+
+    .AM_PM {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        color: var(--dark-gray);
+        font-size: 1.5rem;
+
+        &.active {
+          color: var(--spotify-green);
+          font-weight: 500;
+        }
+      }
+    }
+
+    .time {
+      padding-left: 0.5rem;
+      font-size: 8rem;
+      font-weight: 500;
+    }
+  }
+}
