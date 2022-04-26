@@ -34,8 +34,8 @@ section.center .clock .AM_PM span.active {
 }
 
 section.center .clock .time {
-  padding-left: 0.5rem;
   font-size: 8rem;
   font-weight: 500;
+  padding-left: 0.05em;
 }
 /*# sourceMappingURL=clock.css.map */

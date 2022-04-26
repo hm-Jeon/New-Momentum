@@ -10,80 +10,80 @@ body {
   font-family: "Gotham";
 }
 
-.title {
-  font-weight: 500;
-}
-
 .root {
   height: 100%;
   padding: 1rem;
   box-sizing: border-box;
   background-color: var(--dark-gray);
 
-  section {
-    height: 100%;
+  .title {
+    font-weight: 500;
   }
 
-  .container {
-    display: flex;
-    flex-direction: row;
-    background-color: #ffffff;
-    border-radius: 2rem;
+  section {
+    height: 100%;
 
-    section {
-      box-sizing: border-box;
-      padding: 2rem;
-    }
-
-    .left {
+    &.container {
       display: flex;
-      flex-direction: column;
-      width: 30%;
-      background-color: var(--spotify-green);
-      border-radius: 2rem 0 0 2rem;
+      flex-direction: row;
+      background-color: #ffffff;
+      border-radius: 2rem;
 
-      div {
-        display: flex;
-        flex-direction: column;
+      section {
+        box-sizing: border-box;
+        padding: 2rem;
 
-        .title {
-          h1 {
-            font-size: 1.5rem;
-            color: #ffffff;
+        &.left {
+          display: flex;
+          flex-direction: column;
+          width: 30%;
+          background-color: var(--spotify-green);
+          border-radius: 2rem 0 0 2rem;
+
+          div {
+            display: flex;
+            flex-direction: column;
+
+            .title {
+              h1 {
+                font-size: 1.5rem;
+                color: #ffffff;
+              }
+            }
+
+            .content {
+              height: 100%;
+              box-sizing: border-box;
+            }
+
+            &.top {
+              height: 40%;
+            }
+
+            &.bottom {
+              height: 60%;
+            }
           }
         }
 
-        .content {
-          height: 100%;
-          box-sizing: border-box;
+        &.center {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          width: 40%;
         }
-      }
 
-      .top {
-        height: 40%;
-      }
+        &.right {
+          display: flex;
+          flex-direction: column;
+          width: 30%;
 
-      .bottom {
-        height: 60%;
-      }
-    }
-
-    .center {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      width: 40%;
-    }
-
-    .right {
-      display: flex;
-      flex-direction: column;
-      width: 30%;
-
-      .title {
-        h1 {
-          font-size: 1.5rem;
+          .title {
+            h1 {
+              font-size: 1.5rem;
+            }
+          }
         }
       }
     }

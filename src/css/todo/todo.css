@@ -1,6 +1,6 @@
 .right .todo-form {
   width: 100%;
-  padding: 1rem 0 0;
+  padding: 1em 0 0;
 }
 
 .right .todo-form form {
@@ -17,13 +17,13 @@
 }
 
 .right .todo-form form::after {
+  content: "";
   display: block;
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0%;
   height: 2px;
-  content: "";
+  width: 0%;
   background-color: var(--spotify-green);
   -webkit-transition: width 0.5s ease-in-out;
   transition: width 0.5s ease-in-out;
