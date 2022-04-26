@@ -1,0 +1,177 @@
+.left div.current-weather {
+  height: 40%;
+}
+
+.left div.current-weather .content {
+  padding: 1rem 0;
+}
+
+.left div.current-weather .content > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 100%;
+  padding: 1rem;
+  background-color: var(--spotify-green);
+  border-radius: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+}
+
+.left div.current-weather .content > div:hover {
+  background-color: var(--spotify-green-dark);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
+          box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
+}
+
+.left div.current-weather .content > div > .icon i {
+  font-size: 5rem;
+}
+
+.left div.current-weather .content > div > .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.left div.current-weather .content > div > .info > span.city {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+}
+
+.left div.current-weather .content > div > .info > span.city i {
+  padding-right: 0.5em;
+}
+
+.left div.current-weather .content > div > .info > span.temp {
+  font-size: 4rem;
+  font-weight: 500;
+  padding: 0.2em;
+}
+
+.left div.current-weather .content > div > .info > span.status {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.left div.daily-weather {
+  height: 60%;
+}
+
+.left div.daily-weather .content {
+  padding: 1rem 0 0;
+}
+
+.left div.daily-weather .content > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+.left div.daily-weather .content > div .day {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 19%;
+  padding: 0 1rem;
+  background-color: var(--spotify-green);
+  border-radius: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+}
+
+.left div.daily-weather .content > div .day:hover {
+  background-color: var(--spotify-green-dark);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
+          box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
+}
+
+.left div.daily-weather .content > div .day > .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.left div.daily-weather .content > div .day > .info > .icon i {
+  font-size: 2rem;
+  width: 1.8em;
+}
+
+.left div.daily-weather .content > div .day > .info > .dayOfWeek {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.left div.daily-weather .content > div .day > .temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.left div.daily-weather .content > div .day > .temp > div {
+  font-size: 1.2rem;
+  width: 2em;
+}
+
+.left div.daily-weather .content > div .day > .temp > div.max {
+  font-weight: 500;
+}
+/*# sourceMappingURL=weather.css.map */

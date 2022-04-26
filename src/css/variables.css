@@ -1,6 +1,8 @@
 :root {
-  --dark-gray: #e6ebed;
+  --gray: #e6ebed;
   --light-gray: #fafbfd;
+  --dark-gray: #a6abad;
   --black: #191414;
   --spotify-green: #1ed760;
+  --spotify-green-dark: #1db954;
 }

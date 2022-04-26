@@ -3,17 +3,21 @@ import Handlebars = require("handlebars");
 const template = `
   <section class="container">
   <section class="left">
-    <div class="top">
+    <div class="current-weather">
       <div class="title">
         <h1>Current Weather</h1>
       </div>
-      <div class="content"></div>
+      <div class="content">
+        {{current_weather}}
+      </div>
     </div>
-    <div class="bottom">
+    <div class="daily-weather">
       <div class="title">
         <h1>Daily Weather</h1>
       </div>
-      <div class="content"></div>
+      <div class="content">
+        {{daily_weather}}
+      </div>
     </div>
   </section>
   <section class="center">

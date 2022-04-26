@@ -14,7 +14,7 @@ body {
   height: 100%;
   padding: 1rem;
   box-sizing: border-box;
-  background-color: var(--dark-gray);
+  background-color: var(--gray);
 
   .title {
     font-weight: 500;
@@ -39,29 +39,27 @@ body {
           width: 30%;
           background-color: var(--spotify-green);
           border-radius: 2rem 0 0 2rem;
+          box-shadow: rgba(0, 0, 0, 0.15) 2px 0 5px;
 
-          div {
+          & > div {
             display: flex;
             flex-direction: column;
 
+            * {
+              color: #ffffff;
+            }
+
             .title {
+              color: inherit;
               h1 {
                 font-size: 1.5rem;
-                color: #ffffff;
               }
             }
 
             .content {
               height: 100%;
+              color: inherit;
               box-sizing: border-box;
-            }
-
-            &.top {
-              height: 40%;
-            }
-
-            &.bottom {
-              height: 60%;
             }
           }
         }

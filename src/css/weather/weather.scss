@@ -1,0 +1,124 @@
+@mixin weatherDiv($height, $padding, $border-radius) {
+  height: $height;
+  padding: $padding;
+  background-color: var(--spotify-green);
+  border-radius: $border-radius;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--spotify-green-dark);
+    box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
+  }
+}
+
+.left {
+  div {
+    &.current-weather {
+      height: 40%;
+
+      .content {
+        padding: 1rem 0;
+
+        & > div {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
+          @include weatherDiv(100%, 1rem, 2rem);
+
+          & > .icon {
+            i {
+              font-size: 5rem;
+            }
+          }
+
+          & > .info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & > span {
+              &.city {
+                display: flex;
+                align-items: center;
+                font-size: 1.2rem;
+
+                i {
+                  padding-right: 0.5em;
+                }
+              }
+
+              &.temp {
+                font-size: 4rem;
+                font-weight: 500;
+                padding: 0.2em;
+              }
+
+              &.status {
+                font-size: 2rem;
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.daily-weather {
+      height: 60%;
+
+      .content {
+        padding: 1rem 0 0;
+
+        & > div {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+
+          .day {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include weatherDiv(19%, 0 1rem, 1rem);
+
+            & > .info {
+              display: flex;
+              align-items: center;
+
+              & > .icon {
+                i {
+                  font-size: 2rem;
+                  width: 1.8em;
+                }
+              }
+
+              & > .dayOfWeek {
+                display: flex;
+                justify-content: center;
+                font-size: 1.1rem;
+                font-weight: 500;
+              }
+            }
+
+            & > .temp {
+              display: flex;
+              align-items: center;
+
+              & > div {
+                font-size: 1.2rem;
+                width: 2em;
+
+                &.max {
+                  font-weight: 500;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

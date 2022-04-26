@@ -14,7 +14,7 @@ body {
   padding: 1rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: var(--dark-gray);
+  background-color: var(--gray);
 }
 
 .root .title {
@@ -54,9 +54,11 @@ body {
   width: 30%;
   background-color: var(--spotify-green);
   border-radius: 2rem 0 0 2rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 2px 0 5px;
+          box-shadow: rgba(0, 0, 0, 0.15) 2px 0 5px;
 }
 
-.root section.container section.left div {
+.root section.container section.left > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,23 +68,23 @@ body {
           flex-direction: column;
 }
 
-.root section.container section.left div .title h1 {
-  font-size: 1.5rem;
+.root section.container section.left > div * {
   color: #ffffff;
 }
 
-.root section.container section.left div .content {
+.root section.container section.left > div .title {
+  color: inherit;
+}
+
+.root section.container section.left > div .title h1 {
+  font-size: 1.5rem;
+}
+
+.root section.container section.left > div .content {
   height: 100%;
+  color: inherit;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-.root section.container section.left div.top {
-  height: 40%;
-}
-
-.root section.container section.left div.bottom {
-  height: 60%;
 }
 
 .root section.container section.center {
