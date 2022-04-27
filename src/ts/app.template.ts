@@ -22,7 +22,6 @@ const template = `
   </section>
   <section class="center">
     <div class="greeting">
-      <span>Welcome! User.</span>
     </div>
     <div class="clock">
       {{clock}}

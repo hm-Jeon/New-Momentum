@@ -1,7 +1,22 @@
+@import "../mixins.scss";
+
 .center {
   .greeting {
     position: absolute;
     top: 2rem;
+    text-align: center;
+
+    form {
+      position: relative;
+      width: 100%;
+
+      input {
+        @include input(1.5rem, 500, 2.5rem);
+        text-align: center;
+      }
+
+      @include inputHover;
+    }
 
     span {
       font-size: 2rem;

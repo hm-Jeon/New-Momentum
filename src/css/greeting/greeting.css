@@ -1,6 +1,42 @@
 .center .greeting {
   position: absolute;
   top: 2rem;
+  text-align: center;
+}
+
+.center .greeting form {
+  position: relative;
+  width: 100%;
+}
+
+.center .greeting form input {
+  width: 100%;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid var(--gray);
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  background-color: transparent;
+  text-align: center;
+}
+
+.center .greeting form::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: var(--spotify-green);
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+
+.center .greeting form:hover::after, .center .greeting form:focus-within::after {
+  width: 100%;
 }
 
 .center .greeting span {
