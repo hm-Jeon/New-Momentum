@@ -10,6 +10,20 @@ export default class Greeting {
     this.render();
   }
 
+  private getGreetingMessage = (): string => {
+    const hours = new Date().getHours();
+
+    if (hours < 6 || hours > 21) {
+      return "Good night,";
+    } else if (hours < 12) {
+      return "Good morning,";
+    } else if (hours < 18) {
+      return "Good afternoon,";
+    } else {
+      return "Good evening,";
+    }
+  };
+
   private inputUsername = (event: SubmitEvent) => {
     event.preventDefault();
     const username: string = (this.container.querySelector("input") as HTMLInputElement).value;
@@ -42,7 +56,7 @@ export default class Greeting {
 
     this.container.innerHTML = template({
       hasData: hasData,
-      greetingMessage: "Welcome!",
+      greetingMessage: this.getGreetingMessage(),
       username: username,
     });
 
