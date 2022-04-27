@@ -39,8 +39,59 @@
   width: 100%;
 }
 
-.center .greeting span {
+.center .greeting > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 2rem;
   font-weight: 500;
+}
+
+.center .greeting > span > .input {
+  position: relative;
+  margin: 0 0.3em;
+  outline: none;
+  white-space: nowrap;
+}
+
+.center .greeting > span > .input:focus {
+  background-color: var(--gray);
+}
+
+.center .greeting > span > .input::after {
+  content: "";
+  position: absolute;
+  bottom: -0.2rem;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background-color: var(--spotify-green);
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+
+.center .greeting > span > .input:hover::after, .center .greeting > span > .input:focus::after {
+  width: 100%;
+}
+
+.center .greeting > span:hover i {
+  display: inline-block;
+}
+
+.center .greeting > span i {
+  display: none;
+  color: var(--black);
+  font-size: 1rem;
+  opacity: 0.2;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.center .greeting > span i:hover {
+  opacity: 1;
 }
 /*# sourceMappingURL=greeting.css.map */

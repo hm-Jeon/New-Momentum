@@ -5,4 +5,5 @@
   --black: #191414;
   --spotify-green: #1ed760;
   --spotify-green-dark: #1db954;
+  --input-border-bottom: 2px solid var(--dark-gray);
 }

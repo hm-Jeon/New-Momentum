@@ -18,9 +18,55 @@
       @include inputHover;
     }
 
-    span {
+    & > span {
+      display: flex;
+      align-items: center;
       font-size: 2rem;
       font-weight: 500;
+
+      & > .input {
+        position: relative;
+        margin: 0 0.3em;
+        outline: none;
+        white-space: nowrap;
+
+        &:focus {
+          background-color: var(--gray);
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -0.2rem;
+          left: 0;
+          height: 3px;
+          width: 0%;
+          background-color: var(--spotify-green);
+          transition: width 0.3s ease-in-out;
+        }
+
+        &:hover::after,
+        &:focus::after {
+          width: 100%;
+        }
+      }
+
+      &:hover i {
+        display: inline-block;
+      }
+
+      i {
+        display: none;
+        color: var(--black);
+        font-size: 1rem;
+        opacity: 0.2;
+        transition: opacity 0.3s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
     }
   }
 }
