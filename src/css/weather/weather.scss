@@ -1,17 +1,4 @@
-@mixin weatherDiv($height, $padding, $border-radius) {
-  height: $height;
-  padding: $padding;
-  background-color: var(--spotify-green);
-  border-radius: $border-radius;
-  box-sizing: border-box;
-  cursor: pointer;
-  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-
-  &:hover {
-    background-color: var(--spotify-green-dark);
-    box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
-  }
-}
+@import "../mixins.scss";
 
 .left {
   div {

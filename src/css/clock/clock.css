@@ -5,6 +5,7 @@ section.center .clock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 9rem;
 }
 
 section.center .clock .AM_PM {
@@ -24,8 +25,8 @@ section.center .clock .AM_PM {
 }
 
 section.center .clock .AM_PM span {
-  color: var(--dark-gray);
-  font-size: 1.5rem;
+  color: var(--gray);
+  font-size: 0.2em;
 }
 
 section.center .clock .AM_PM span.active {
@@ -34,7 +35,6 @@ section.center .clock .AM_PM span.active {
 }
 
 section.center .clock .time {
-  font-size: 8rem;
   font-weight: 500;
   padding-left: 0.05em;
 }

@@ -1,0 +1,45 @@
+@mixin input($font-size, $font-weight, $line-height) {
+  width: 100%;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid var(--gray);
+  font-family: inherit;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  background-color: transparent;
+}
+
+@mixin inputHover {
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: var(--spotify-green);
+    transition: width 0.5s ease-in-out;
+  }
+
+  &:hover::after,
+  &:focus-within::after {
+    width: 100%;
+  }
+}
+
+@mixin weatherDiv($height, $padding, $border-radius) {
+  height: $height;
+  padding: $padding;
+  background-color: var(--spotify-green);
+  border-radius: $border-radius;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--spotify-green-dark);
+    box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
+  }
+}

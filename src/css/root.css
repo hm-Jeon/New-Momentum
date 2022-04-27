@@ -110,6 +110,10 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 30%;
+  background-color: var(--light-gray);
+  border-radius: 0 2rem 2rem 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) -2px 0 5px;
+          box-shadow: rgba(0, 0, 0, 0.1) -2px 0 5px;
 }
 
 .root section.container section.right .title h1 {

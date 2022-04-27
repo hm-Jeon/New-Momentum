@@ -12,8 +12,11 @@
   padding: 0;
   border: none;
   border-bottom: 2px solid var(--gray);
-  font-size: 1rem;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 500;
   line-height: 2.5rem;
+  background-color: transparent;
 }
 
 .right .todo-form form::after {
@@ -35,6 +38,6 @@
 
 .right .todo-list {
   height: 100%;
-  padding-top: 1rem;
+  margin-top: 1rem;
 }
 /*# sourceMappingURL=todo.css.map */

@@ -1,3 +1,5 @@
+@import "../mixins.scss";
+
 .right {
   .todo-form {
     width: 100%;
@@ -7,35 +9,15 @@
       position: relative;
 
       input {
-        width: 100%;
-        padding: 0;
-        border: none;
-        border-bottom: 2px solid var(--gray);
-        font-size: 1rem;
-        line-height: 2.5rem;
+        @include input(1.2rem, 500, 2.5rem);
       }
 
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 2px;
-        width: 0%;
-        background-color: var(--spotify-green);
-        transition: width 0.5s ease-in-out;
-      }
-
-      &:hover::after,
-      &:focus-within::after {
-        width: 100%;
-      }
+      @include inputHover;
     }
   }
 
   .todo-list {
     height: 100%;
-    padding-top: 1rem;
+    margin-top: 1rem;
   }
 }

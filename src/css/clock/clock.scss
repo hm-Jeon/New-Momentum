@@ -2,6 +2,7 @@ section.center {
   .clock {
     display: flex;
     align-items: center;
+    font-size: 9rem;
 
     .AM_PM {
       display: flex;
@@ -10,8 +11,8 @@ section.center {
       align-items: center;
 
       span {
-        color: var(--dark-gray);
-        font-size: 1.5rem;
+        color: var(--gray);
+        font-size: 0.2em;
 
         &.active {
           color: var(--spotify-green);
@@ -21,7 +22,6 @@ section.center {
     }
 
     .time {
-      font-size: 8rem;
       font-weight: 500;
       padding-left: 0.05em;
     }
