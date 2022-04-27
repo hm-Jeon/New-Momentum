@@ -9,6 +9,22 @@
   width: 100%;
 }
 
+.center .greeting form::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: var(--spotify-green);
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+
+.center .greeting form:hover::after, .center .greeting form:focus-within::after {
+  width: 100%;
+}
+
 .center .greeting form input {
   width: 100%;
   padding: 0;
@@ -17,29 +33,12 @@
   font-family: inherit;
   font-size: 1.5rem;
   font-weight: 500;
-  line-height: 2.5rem;
+  line-height: 1.2em;
   background-color: transparent;
   text-align: center;
 }
 
-.center .greeting form::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 0%;
-  background-color: var(--spotify-green);
-  -webkit-transition: width 0.5s ease-in-out;
-  transition: width 0.5s ease-in-out;
-}
-
-.center .greeting form:hover::after, .center .greeting form:focus-within::after {
-  width: 100%;
-}
-
-.center .greeting > span {
+.center .greeting > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,21 +49,23 @@
   font-weight: 500;
 }
 
-.center .greeting > span > .input {
-  position: relative;
-  margin: 0 0.3em;
-  outline: none;
+.center .greeting > div > span {
+  padding-bottom: 0.1em;
+  line-height: 1.2em;
   white-space: nowrap;
 }
 
-.center .greeting > span > .input:focus {
-  background-color: var(--gray);
+.center .greeting > div > span.input {
+  position: relative;
+  margin-left: 0.3em;
+  outline: none;
+  border-radius: 0.1em;
 }
 
-.center .greeting > span > .input::after {
+.center .greeting > div > span.input::after {
   content: "";
   position: absolute;
-  bottom: -0.2rem;
+  bottom: 0;
   left: 0;
   height: 3px;
   width: 0%;
@@ -73,25 +74,34 @@
   transition: width 0.3s ease-in-out;
 }
 
-.center .greeting > span > .input:hover::after, .center .greeting > span > .input:focus::after {
+.center .greeting > div > span.input:hover::after, .center .greeting > div > span.input:focus-within::after {
   width: 100%;
 }
 
-.center .greeting > span:hover i {
+.center .greeting > div > span.input:focus {
+  background-color: var(--gray);
+}
+
+.center .greeting > div > span.period {
+  padding-right: 0.3em;
+}
+
+.center .greeting > div:hover i {
   display: inline-block;
 }
 
-.center .greeting > span i {
+.center .greeting > div > i {
   display: none;
-  color: var(--black);
   font-size: 1rem;
+  color: var(--spotify-green);
   opacity: 0.2;
   -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
+  text-shadow: rgba(0, 0, 0, 0.15) 1px 1px 2px;
   cursor: pointer;
 }
 
-.center .greeting > span i:hover {
+.center .greeting > div > i:hover {
   opacity: 1;
 }
 /*# sourceMappingURL=greeting.css.map */

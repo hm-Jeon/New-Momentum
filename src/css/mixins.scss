@@ -10,17 +10,16 @@
   background-color: transparent;
 }
 
-@mixin inputHover {
+@mixin inputHover($height) {
   &::after {
     content: "";
-    display: block;
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 2px;
+    height: $height;
     width: 0%;
     background-color: var(--spotify-green);
-    transition: width 0.5s ease-in-out;
+    transition: width 0.3s ease-in-out;
   }
 
   &:hover::after,

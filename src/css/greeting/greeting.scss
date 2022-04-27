@@ -9,45 +9,39 @@
     form {
       position: relative;
       width: 100%;
+      @include inputHover(2px);
 
       input {
-        @include input(1.5rem, 500, 2.5rem);
+        @include input(1.5rem, 500, 1.2em);
         text-align: center;
       }
-
-      @include inputHover;
     }
 
-    & > span {
+    & > div {
       display: flex;
       align-items: center;
       font-size: 2rem;
       font-weight: 500;
 
-      & > .input {
-        position: relative;
-        margin: 0 0.3em;
-        outline: none;
+      & > span {
+        padding-bottom: 0.1em;
+        line-height: 1.2em;
         white-space: nowrap;
 
-        &:focus {
-          background-color: var(--gray);
+        &.input {
+          position: relative;
+          margin-left: 0.3em;
+          outline: none;
+          border-radius: 0.1em;
+          @include inputHover(3px);
+
+          &:focus {
+            background-color: var(--gray);
+          }
         }
 
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: -0.2rem;
-          left: 0;
-          height: 3px;
-          width: 0%;
-          background-color: var(--spotify-green);
-          transition: width 0.3s ease-in-out;
-        }
-
-        &:hover::after,
-        &:focus::after {
-          width: 100%;
+        &.period {
+          padding-right: 0.3em;
         }
       }
 
@@ -55,12 +49,13 @@
         display: inline-block;
       }
 
-      i {
+      & > i {
         display: none;
-        color: var(--black);
         font-size: 1rem;
+        color: var(--spotify-green);
         opacity: 0.2;
         transition: opacity 0.3s ease-in-out;
+        text-shadow: rgba(0, 0, 0, 0.15) 1px 1px 2px;
         cursor: pointer;
 
         &:hover {
