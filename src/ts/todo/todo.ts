@@ -11,7 +11,6 @@ interface TodoObj {
 
 interface TypeItObj {
   speed?: number;
-  waitUntilVisible?: boolean;
   lifeLike?: boolean;
   loop?: false;
   destroy: Function;
@@ -55,7 +54,6 @@ export default class Todo {
     const text: HTMLElement = document.getElementById(`${todoId}`) as HTMLElement;
     new (TypeIt as any)(text.querySelector(".text"), {
       speed: 100,
-      waitUntilVisible: true,
       lifeLike: true,
       loop: false,
       afterComplete: (instance: TypeItObj) => {

@@ -7,18 +7,6 @@
   position: relative;
 }
 
-.right .todo-form form input {
-  width: 100%;
-  padding: 0;
-  border: none;
-  border-bottom: 2px solid var(--gray);
-  font-family: inherit;
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 2.5rem;
-  background-color: transparent;
-}
-
 .right .todo-form form::after {
   content: "";
   position: absolute;
@@ -33,6 +21,26 @@
 
 .right .todo-form form:hover::after, .right .todo-form form:focus-within::after {
   width: 100%;
+}
+
+.right .todo-form form input {
+  width: 100%;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid var(--gray);
+  font-family: inherit;
+  font-size: var(--todo-font-size);
+  font-weight: 500;
+  line-height: 2em;
+  background-color: transparent;
+  padding: 0 0.5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 0.1em;
+}
+
+.right .todo-form form input:focus {
+  background-color: var(--gray);
 }
 
 .right .todo-list {
@@ -51,7 +59,7 @@
 }
 
 .right .todo-list .todo {
-  font-size: 1.2rem;
+  font-size: var(--todo-font-size);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

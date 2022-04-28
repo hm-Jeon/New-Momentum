@@ -28,6 +28,14 @@
   }
 }
 
+@mixin inputFocus {
+  border-radius: 0.1em;
+
+  &:focus {
+    background-color: var(--gray);
+  }
+}
+
 @mixin weatherDiv($height, $padding, $border-radius) {
   height: $height;
   padding: $padding;

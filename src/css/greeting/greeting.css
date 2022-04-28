@@ -33,9 +33,14 @@
   font-family: inherit;
   font-size: 1.5rem;
   font-weight: 500;
-  line-height: 1.2em;
+  line-height: 1.5em;
   background-color: transparent;
   text-align: center;
+  border-radius: 0.1em;
+}
+
+.center .greeting form input:focus {
+  background-color: var(--gray);
 }
 
 .center .greeting > div {

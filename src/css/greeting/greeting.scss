@@ -12,8 +12,9 @@
       @include inputHover(2px);
 
       input {
-        @include input(1.5rem, 500, 1.2em);
+        @include input(1.5rem, 500, 1.5em);
         text-align: center;
+        @include inputFocus();
       }
     }
 
@@ -33,12 +34,8 @@
           position: relative;
           margin-left: 0.3em;
           outline: none;
-          border-radius: 0.1em;
           @include inputHover(3px);
-
-          &:focus {
-            background-color: var(--gray);
-          }
+          @include inputFocus();
         }
 
         &.period {

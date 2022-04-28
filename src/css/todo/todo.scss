@@ -7,12 +7,14 @@
 
     form {
       position: relative;
+      @include inputHover(2px);
 
       input {
-        @include input(1.2rem, 500, 2.5rem);
+        @include input(var(--todo-font-size), 500, 2em);
+        padding: 0 0.5em;
+        box-sizing: border-box;
+        @include inputFocus();
       }
-
-      @include inputHover(2px);
     }
   }
 
@@ -31,7 +33,7 @@
     }
 
     .todo {
-      font-size: 1.2rem;
+      font-size: var(--todo-font-size);
       display: flex;
       justify-content: space-between;
       padding: 0.5em;
