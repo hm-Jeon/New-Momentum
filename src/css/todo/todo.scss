@@ -19,14 +19,23 @@
   .todo-list {
     height: 100%;
     margin-top: 1rem;
+    padding: 0 0.25rem;
     overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 0.2rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--spotify-green);
+    }
 
     .todo {
       font-size: 1.2rem;
       display: flex;
       justify-content: space-between;
       padding: 0.5em 1em;
-      border-radius: 1em;
+      border-radius: 0.5em;
       transition: all 0.3s ease-in-out;
 
       &:hover {

@@ -38,7 +38,16 @@
 .right .todo-list {
   height: 100%;
   margin-top: 1rem;
+  padding: 0 0.25rem;
   overflow-y: scroll;
+}
+
+.right .todo-list::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+.right .todo-list::-webkit-scrollbar-thumb {
+  background-color: var(--spotify-green);
 }
 
 .right .todo-list .todo {
@@ -50,7 +59,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0.5em 1em;
-  border-radius: 1em;
+  border-radius: 0.5em;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
