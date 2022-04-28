@@ -34,15 +34,15 @@
       font-size: 1.2rem;
       display: flex;
       justify-content: space-between;
-      padding: 0.5em 1em;
+      padding: 0.5em;
       border-radius: 0.5em;
-      transition: all 0.3s ease-in-out;
+      transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
       &:hover {
         background-color: var(--gray);
         box-shadow: var(--box-shadow);
 
-        & > .deleteBtn > i {
+        & > .deleteBtn {
           opacity: 0.2;
         }
       }
@@ -55,6 +55,7 @@
         display: flex;
 
         & > input {
+          margin-top: 0.3em;
           zoom: 1.25;
           cursor: pointer;
           accent-color: var(--spotify-green);
@@ -68,31 +69,25 @@
           }
         }
 
-        & > div {
-          padding: 0 0.5em;
+        & > .text {
           box-sizing: border-box;
-
-          & > .text {
-            font-weight: 500;
-            word-break: break-all;
-          }
+          height: 100%;
+          padding: 0.15rem 0.3em;
+          font-weight: 500;
+          word-break: break-all;
         }
       }
 
       & > .deleteBtn {
-        height: fit-content;
+        color: red;
+        margin-top: 0.3em;
+        font-size: 0.9em;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        cursor: pointer;
 
-        & > i {
-          color: red;
-          margin-top: 0.2em;
-          font-size: 0.9em;
-          opacity: 0;
-          transition: opacity 0.3s ease-in-out;
-          cursor: pointer;
-
-          &:hover {
-            opacity: 1;
-          }
+        &:hover {
+          opacity: 1;
         }
       }
     }

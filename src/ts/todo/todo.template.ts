@@ -3,13 +3,9 @@ const template = `
   <div class="todo" id="{{id}}">
     <div>
       <input class="checkbox" type="checkbox" {{#if checked}}checked{{/if}} />
-      <div>
-        <span class="text">{{todo}}</span>
-      </div>
+      <span class="text">{{todo}}</span>
     </div>
-    <div class="deleteBtn">
-      <i class="fa-solid fa-square-minus"></i>
-    </div>
+    <i class="fa-solid fa-square-minus deleteBtn"></i>
   </div>
   {{/todos}}
 `;

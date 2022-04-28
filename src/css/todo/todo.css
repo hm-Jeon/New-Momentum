@@ -58,10 +58,12 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0.5em 1em;
+  padding: 0.5em;
   border-radius: 0.5em;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
 }
 
 .right .todo-list .todo:hover {
@@ -70,7 +72,7 @@
           box-shadow: var(--box-shadow);
 }
 
-.right .todo-list .todo:hover > .deleteBtn > i {
+.right .todo-list .todo:hover > .deleteBtn {
   opacity: 0.2;
 }
 
@@ -85,6 +87,7 @@
 }
 
 .right .todo-list .todo > div > input {
+  margin-top: 0.3em;
   zoom: 1.25;
   cursor: pointer;
   accent-color: var(--spotify-green);
@@ -96,26 +99,18 @@
   opacity: 0.3;
 }
 
-.right .todo-list .todo > div > div {
-  padding: 0 0.5em;
+.right .todo-list .todo > div > .text {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-.right .todo-list .todo > div > div > .text {
+  height: 100%;
+  padding: 0.15rem 0.3em;
   font-weight: 500;
   word-break: break-all;
 }
 
 .right .todo-list .todo > .deleteBtn {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.right .todo-list .todo > .deleteBtn > i {
   color: red;
-  margin-top: 0.2em;
+  margin-top: 0.3em;
   font-size: 0.9em;
   opacity: 0;
   -webkit-transition: opacity 0.3s ease-in-out;
@@ -123,7 +118,7 @@
   cursor: pointer;
 }
 
-.right .todo-list .todo > .deleteBtn > i:hover {
+.right .todo-list .todo > .deleteBtn:hover {
   opacity: 1;
 }
 /*# sourceMappingURL=todo.css.map */

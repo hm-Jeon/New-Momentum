@@ -9,6 +9,15 @@ interface TodoObj {
   checked: boolean;
 }
 
+interface TypeItObj {
+  speed?: number;
+  waitUntilVisible?: boolean;
+  lifeLike?: boolean;
+  loop?: false;
+  destroy: Function;
+  afterComplete?: Function;
+}
+
 export default class Todo {
   private container: HTMLElement;
   private input: HTMLInputElement;
@@ -44,19 +53,15 @@ export default class Todo {
     this.render();
 
     const text: HTMLElement = document.getElementById(`${todoId}`) as HTMLElement;
-    const typeit = new (TypeIt as any)(text.querySelector(".text"), {
+    new (TypeIt as any)(text.querySelector(".text"), {
       speed: 100,
       waitUntilVisible: true,
       lifeLike: true,
       loop: false,
+      afterComplete: (instance: TypeItObj) => {
+        instance.destroy();
+      },
     }).go();
-
-    const destroyTypeit = setInterval((state: boolean = typeit.is("completed")) => {
-      if (state === true) {
-        typeit.destroy();
-        clearInterval(destroyTypeit);
-      }
-    }, 500);
   };
 
   private deleteTodo = (event: Event) => {
@@ -93,7 +98,7 @@ export default class Todo {
   private render = () => {
     this.container.innerHTML = template({ todos: this.todos });
 
-    const deleteBtnList = document.querySelectorAll(".deleteBtn i");
+    const deleteBtnList = this.container.querySelectorAll(".deleteBtn");
     deleteBtnList.forEach(deleteBtn => {
       deleteBtn.addEventListener("click", this.deleteTodo);
     });
