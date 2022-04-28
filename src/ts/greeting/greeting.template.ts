@@ -10,8 +10,8 @@ const template = `
     <span class="period">
       .
     </span>
-    <i class="fa-solid fa-delete-left"></i>
   </div>
+  <i class="fa-solid fa-delete-left"></i>
   {{else}}
   <form>
     <input type="text" placeholder="Please input your name" maxlength="20" spellcheck="false" />
