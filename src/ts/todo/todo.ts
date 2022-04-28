@@ -1,4 +1,4 @@
-import { EventEmitter } from "stream";
+import TypeIt from "typeit";
 import template from "./todo.template";
 
 const TODOS_KEY = "todos";
@@ -27,17 +27,36 @@ export default class Todo {
   private writeTodo = (event: SubmitEvent) => {
     event.preventDefault();
 
-    const todo: string = (this.input.querySelector("input") as HTMLInputElement).value;
-    (this.input.querySelector("input") as HTMLInputElement).value = "";
+    const input: HTMLInputElement = this.input.querySelector("input") as HTMLInputElement;
+    const todo: string = input.value;
+    input.value = "";
+    input.blur();
+
+    const todoId: number = Date.now();
 
     this.todos.push({
-      id: Date.now(),
+      id: todoId,
       todo: todo,
       checked: false,
     });
 
     this.saveTodos();
     this.render();
+
+    const text: HTMLElement = document.getElementById(`${todoId}`) as HTMLElement;
+    const typeit = new (TypeIt as any)(text.querySelector(".text"), {
+      speed: 100,
+      waitUntilVisible: true,
+      lifeLike: true,
+      loop: false,
+    }).go();
+
+    const destroyTypeit = setInterval((state: boolean = typeit.is("completed")) => {
+      if (state === true) {
+        typeit.destroy();
+        clearInterval(destroyTypeit);
+      }
+    }, 500);
   };
 
   private deleteTodo = (event: Event) => {
