@@ -19,5 +19,73 @@
   .todo-list {
     height: 100%;
     margin-top: 1rem;
+    overflow-y: scroll;
+
+    .todo {
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5em 1em;
+      border-radius: 1em;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: var(--gray);
+        box-shadow: var(--box-shadow);
+
+        & > .deleteBtn > i {
+          opacity: 0.2;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 0.2em;
+      }
+
+      & > div {
+        display: flex;
+
+        & > input {
+          zoom: 1.25;
+          cursor: pointer;
+          accent-color: var(--spotify-green);
+          outline: none;
+
+          &:checked {
+            & + div .text {
+              text-decoration: line-through;
+              opacity: 0.3;
+            }
+          }
+        }
+
+        & > div {
+          padding: 0 0.5em;
+          box-sizing: border-box;
+
+          & > .text {
+            font-weight: 500;
+            word-break: break-all;
+          }
+        }
+      }
+
+      & > .deleteBtn {
+        height: fit-content;
+
+        & > i {
+          color: red;
+          margin-top: 0.2em;
+          font-size: 0.9em;
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
   }
 }

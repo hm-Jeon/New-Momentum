@@ -1,5 +1,3 @@
-import Handlebars = require("handlebars");
-
 const template = `
   <section class="container">
   <section class="left">

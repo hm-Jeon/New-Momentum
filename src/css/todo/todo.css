@@ -38,5 +38,83 @@
 .right .todo-list {
   height: 100%;
   margin-top: 1rem;
+  overflow-y: scroll;
+}
+
+.right .todo-list .todo {
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.right .todo-list .todo:hover {
+  background-color: var(--gray);
+  -webkit-box-shadow: var(--box-shadow);
+          box-shadow: var(--box-shadow);
+}
+
+.right .todo-list .todo:hover > .deleteBtn > i {
+  opacity: 0.2;
+}
+
+.right .todo-list .todo:not(:last-child) {
+  margin-bottom: 0.2em;
+}
+
+.right .todo-list .todo > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.right .todo-list .todo > div > input {
+  zoom: 1.25;
+  cursor: pointer;
+  accent-color: var(--spotify-green);
+  outline: none;
+}
+
+.right .todo-list .todo > div > input:checked + div .text {
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+
+.right .todo-list .todo > div > div {
+  padding: 0 0.5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.right .todo-list .todo > div > div > .text {
+  font-weight: 500;
+  word-break: break-all;
+}
+
+.right .todo-list .todo > .deleteBtn {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.right .todo-list .todo > .deleteBtn > i {
+  color: red;
+  margin-top: 0.2em;
+  font-size: 0.9em;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.right .todo-list .todo > .deleteBtn > i:hover {
+  opacity: 1;
 }
 /*# sourceMappingURL=todo.css.map */
