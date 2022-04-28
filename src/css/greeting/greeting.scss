@@ -18,6 +18,7 @@
     }
 
     & > div {
+      position: relative;
       display: flex;
       align-items: center;
       font-size: 2rem;
@@ -45,22 +46,26 @@
         }
       }
 
-      &:hover i {
-        display: inline-block;
+      &:hover ~ i {
+        display: block;
       }
+    }
 
-      & > i {
-        display: none;
-        font-size: 1rem;
-        color: var(--spotify-green);
-        opacity: 0.2;
-        transition: opacity 0.3s ease-in-out;
-        text-shadow: rgba(0, 0, 0, 0.15) 1px 1px 2px;
-        cursor: pointer;
+    & > i {
+      display: none;
+      position: absolute;
+      top: 50%;
+      right: -1em;
+      font-size: 1rem;
+      color: var(--spotify-green);
+      opacity: 0.2;
+      transform: translateY(-50%);
+      transition: opacity 0.3s ease-in-out;
+      cursor: pointer;
 
-        &:hover {
-          opacity: 1;
-        }
+      &:hover {
+        display: block;
+        opacity: 1;
       }
     }
   }

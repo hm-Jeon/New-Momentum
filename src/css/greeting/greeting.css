@@ -39,6 +39,7 @@
 }
 
 .center .greeting > div {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -86,22 +87,27 @@
   padding-right: 0.3em;
 }
 
-.center .greeting > div:hover i {
-  display: inline-block;
+.center .greeting > div:hover ~ i {
+  display: block;
 }
 
-.center .greeting > div > i {
+.center .greeting > i {
   display: none;
+  position: absolute;
+  top: 50%;
+  right: -1em;
   font-size: 1rem;
   color: var(--spotify-green);
   opacity: 0.2;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
-  text-shadow: rgba(0, 0, 0, 0.15) 1px 1px 2px;
   cursor: pointer;
 }
 
-.center .greeting > div > i:hover {
+.center .greeting > i:hover {
+  display: block;
   opacity: 1;
 }
 /*# sourceMappingURL=greeting.css.map */
