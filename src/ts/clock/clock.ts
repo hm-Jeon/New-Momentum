@@ -11,6 +11,8 @@ export default class Clock {
 
   constructor(container: string) {
     this.container = document.querySelector(container) as HTMLElement;
+
+    this.render();
   }
 
   private getTime = (): string => {
@@ -45,7 +47,7 @@ export default class Clock {
     time.innerHTML = this.getTime();
   };
 
-  render = (): void => {
+  private render = (): void => {
     this.container.innerHTML = this.template({});
     this.print_time();
     setInterval(this.print_time, 1000);

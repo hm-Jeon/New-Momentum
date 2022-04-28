@@ -42,6 +42,8 @@ export default class Weather {
     this.daily_weather_container = (
       document.querySelector(daily_weather_container) as HTMLElement
     ).querySelector(".content") as HTMLElement;
+
+    navigator.geolocation.getCurrentPosition(this.GeoOk);
   }
 
   GeoOk = (position: WeatherObj) => {
