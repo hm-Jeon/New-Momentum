@@ -1,5 +1,5 @@
-import current_weather_template from "./current_weather.template";
-import daily_weather_template from "./daily_weather.template";
+import currentWeatherTemplate from "./current_weather.template";
+import dailyWeatherTemplate from "./daily_weather.template";
 import axios from "axios";
 
 const API_KEY = "1ef5279831e294aefc64dfb9b55f20a1";
@@ -31,16 +31,16 @@ const iconMap: WeatherObj = {
 };
 
 export default class Weather {
-  private current_weather_container: HTMLElement;
-  private daily_weather_container: HTMLElement;
+  private currentWeatherContainer: HTMLElement;
+  private dailyWeatherContainer: HTMLElement;
 
-  constructor(current_weather_container: string, daily_weather_container: string) {
-    this.current_weather_container = (
-      document.querySelector(current_weather_container) as HTMLElement
+  constructor(currentWeatherContainer: string, dailyWeatherContainer: string) {
+    this.currentWeatherContainer = (
+      document.querySelector(currentWeatherContainer) as HTMLElement
     ).querySelector(".content") as HTMLElement;
 
-    this.daily_weather_container = (
-      document.querySelector(daily_weather_container) as HTMLElement
+    this.dailyWeatherContainer = (
+      document.querySelector(dailyWeatherContainer) as HTMLElement
     ).querySelector(".content") as HTMLElement;
 
     navigator.geolocation.getCurrentPosition(this.GeoOk);
@@ -58,7 +58,7 @@ export default class Weather {
     const url: string = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=${METRIC_KEY}`;
     const data: WeatherObj = (await axios.get(url)).data;
 
-    this.render(this.current_weather_container, current_weather_template, {
+    this.render(this.currentWeatherContainer, currentWeatherTemplate, {
       temp: `${Math.round(data.main.temp)}°`,
       status: data.weather[0].main,
       city: data.name,
@@ -69,27 +69,27 @@ export default class Weather {
   private renderDailyWeather = async (lat: number, lon: number) => {
     const exclude = "current,minutely,hourly,alerts";
     const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${exclude}&appid=${API_KEY}&units=${METRIC_KEY}`;
-    const data: WeatherObj = (await axios.get(url)).data;
+    const dataList: WeatherObj = (await axios.get(url)).data.daily;
     const dailyWeatherList: [WeatherObj?] = [];
 
-    data.daily.forEach((value: WeatherObj, index: number) => {
+    dataList.forEach((data: WeatherObj, index: number) => {
       if (index < 5) {
-        const dayofWeek = new Date(value.dt * 1000).toLocaleDateString("en", {
+        const dayofWeek = new Date(data.dt * 1000).toLocaleDateString("en", {
           weekday: "short",
         });
 
         const dailyWeather: WeatherObj = {
-          dayOfWeek: dayofWeek,
-          minTemp: `${Math.round(value.temp.min)}°`,
-          maxTemp: `${Math.round(value.temp.max)}°`,
-          icon: iconMap[value.weather[0].icon],
+          dayOfWeek: index === 0 ? "Today" : index === 1 ? "Tomorrow" : dayofWeek,
+          minTemp: `${Math.round(data.temp.min)}°`,
+          maxTemp: `${Math.round(data.temp.max)}°`,
+          icon: iconMap[data.weather[0].icon],
         };
 
         dailyWeatherList.push(dailyWeather);
       }
     });
 
-    this.render(this.daily_weather_container, daily_weather_template, {
+    this.render(this.dailyWeatherContainer, dailyWeatherTemplate, {
       dailyWeatherList: dailyWeatherList,
     });
   };
