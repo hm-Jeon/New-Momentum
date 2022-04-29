@@ -34,7 +34,8 @@ export default class Clock {
 
   // Date
   private getDate = (): string => {
-    const dayofWeek = new Date().toLocaleDateString("en", {
+    const date: Date = new Date();
+    const dayofWeek = date.toLocaleDateString("en", {
       weekday: "long",
       year: "numeric",
       month: "long",
@@ -52,9 +53,9 @@ export default class Clock {
   private getStoredHoursSystem = (): boolean => {
     return !localStorage.getItem(IS_12HOURS_SYSTEM_KEY)
       ? true
-      : localStorage.getItem(IS_12HOURS_SYSTEM_KEY) === "false"
-      ? false
-      : true;
+      : localStorage.getItem(IS_12HOURS_SYSTEM_KEY) === "true"
+      ? true
+      : false;
   };
 
   private toggleHoursSystem = () => {
@@ -74,16 +75,13 @@ export default class Clock {
 
   private getHours = (date: Date): string => {
     return this.is12HoursSystem
-      ? this.convertTo12HoursSystem(date.getHours()) === "0"
-        ? "12"
-        : this.convertTo12HoursSystem(date.getHours())
+      ? this.convertTo12HoursSystem(date.getHours())
       : String(date.getHours()).padStart(2, "0");
   };
 
   private convertTo12HoursSystem = (hours: number): string => {
     const AM: HTMLElement = this.container.querySelector(AM_CLASS) as HTMLElement;
     const PM: HTMLElement = this.container.querySelector(PM_CLASS) as HTMLElement;
-
     const AMorPM: string = hours > 12 ? "PM" : "AM";
 
     if (AMorPM === "AM") {
@@ -94,7 +92,7 @@ export default class Clock {
       PM.classList.add(ACTIVE_KEY);
     }
 
-    return String(hours % 12);
+    return String(hours % 12) === "0" ? "12" : String(hours % 12);
   };
 
   private renderTime = (now: string): void => {
