@@ -8,11 +8,14 @@ const ACTIVE_KEY: string = "active";
 export default class Clock {
   private template: HandlebarsTemplateDelegate = template;
   private container: HTMLElement;
+  private timeSpan: HTMLElement;
 
   constructor(container: string) {
     this.container = document.querySelector(container) as HTMLElement;
-
     this.render();
+
+    this.timeSpan = this.container.querySelector(TIME_CLASS) as HTMLElement;
+    this.renderTime(this.getTime());
   }
 
   private getTime = (): string => {
@@ -42,14 +45,21 @@ export default class Clock {
     return String(hours % 12);
   };
 
-  private print_time = (): void => {
-    const time: HTMLElement = this.container.querySelector(TIME_CLASS) as HTMLElement;
-    time.innerHTML = this.getTime();
+  private renderTime = (now: string): void => {
+    this.timeSpan.innerHTML = now;
+  };
+
+  private reRenderTime = (): Function => {
+    return (now: string = this.getTime()) => {
+      if (this.timeSpan.innerHTML !== now) {
+        this.renderTime(now);
+      }
+    };
   };
 
   private render = (): void => {
     this.container.innerHTML = this.template({});
-    this.print_time();
-    setInterval(this.print_time, 1000);
+
+    setInterval(this.reRenderTime(), 1000);
   };
 }
