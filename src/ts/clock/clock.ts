@@ -21,7 +21,7 @@ export default class Clock {
     this.render();
 
     this.dateSpan = this.container.querySelector(DATE_CLASS) as HTMLElement;
-    this.renderDate();
+    this.renderDate(this.getDate());
 
     this.is12HoursSystem = this.getStoredHoursSystem();
 
@@ -32,7 +32,8 @@ export default class Clock {
     this.toggleBtn.addEventListener("click", this.toggleHoursSystem);
   }
 
-  private renderDate = (): void => {
+  // Date
+  private getDate = (): string => {
     const dayofWeek = new Date().toLocaleDateString("en", {
       weekday: "long",
       year: "numeric",
@@ -40,9 +41,14 @@ export default class Clock {
       day: "numeric",
     });
 
-    this.dateSpan.innerHTML = dayofWeek;
+    return dayofWeek;
   };
 
+  private renderDate = (now: string): void => {
+    this.dateSpan.innerHTML = now;
+  };
+
+  // Time
   private getStoredHoursSystem = (): boolean => {
     return !localStorage.getItem(IS_12HOURS_SYSTEM_KEY)
       ? true
@@ -102,17 +108,23 @@ export default class Clock {
     }
   };
 
-  private reRenderTime = (): Function => {
-    return (now: string = this.getTime()) => {
-      if (this.timeSpan.innerHTML !== now) {
-        this.renderTime(now);
+  // Re-rendering
+  private reRenderClock = (): Function => {
+    return (timeNow: string = this.getTime(), dateNow: string = this.getDate()) => {
+      if (this.timeSpan.innerHTML !== timeNow) {
+        this.renderTime(timeNow);
+      }
+
+      if (this.dateSpan.innerHTML !== dateNow) {
+        this.renderDate(dateNow);
       }
     };
   };
 
+  // Initial Rendering
   private render = (): void => {
     this.container.innerHTML = this.template({});
 
-    setInterval(this.reRenderTime(), 1000);
+    setInterval(this.reRenderClock(), 1000);
   };
 }
