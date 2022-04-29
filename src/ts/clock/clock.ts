@@ -2,6 +2,7 @@ import template from "./clock.template";
 
 const AM_CLASS: string = ".AM";
 const PM_CLASS: string = ".PM";
+const DATE_CLASS: string = ".date span";
 const TIME_CLASS: string = ".time";
 const TOGGLE_CLASS: string = ".toggle i";
 const ACTIVE_KEY: string = "active";
@@ -10,6 +11,7 @@ const IS_12HOURS_SYSTEM_KEY = "is12HoursSystem";
 export default class Clock {
   private template: HandlebarsTemplateDelegate = template;
   private container: HTMLElement;
+  private dateSpan: HTMLElement;
   private timeSpan: HTMLElement;
   private toggleBtn: HTMLElement;
   private is12HoursSystem: boolean;
@@ -18,13 +20,28 @@ export default class Clock {
     this.container = document.querySelector(container) as HTMLElement;
     this.render();
 
+    this.dateSpan = this.container.querySelector(DATE_CLASS) as HTMLElement;
+    this.renderDate();
+
     this.is12HoursSystem = this.getStoredHoursSystem();
-    this.toggleBtn = this.container.querySelector(TOGGLE_CLASS) as HTMLElement;
-    this.toggleBtn.addEventListener("click", this.toggleHoursSystem);
 
     this.timeSpan = this.container.querySelector(TIME_CLASS) as HTMLElement;
     this.renderTime(this.getTime());
+
+    this.toggleBtn = this.container.querySelector(TOGGLE_CLASS) as HTMLElement;
+    this.toggleBtn.addEventListener("click", this.toggleHoursSystem);
   }
+
+  private renderDate = (): void => {
+    const dayofWeek = new Date().toLocaleDateString("en", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+
+    this.dateSpan.innerHTML = dayofWeek;
+  };
 
   private getStoredHoursSystem = (): boolean => {
     return !localStorage.getItem(IS_12HOURS_SYSTEM_KEY)

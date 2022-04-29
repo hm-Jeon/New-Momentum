@@ -1,11 +1,16 @@
 const template = `
-  <div class="AM_PM">
-    <span class="AM">AM</span>
-    <span class="PM">PM</span>
+  <div class="date">
+    <span>{{date}}</span>
   </div>
-  <span class="time">{{time}}</span>
-  <div class="toggle">
-    <i class="fa-solid fa-clock-rotate-left"></i>
+  <div class="clockDiv">
+    <div class="AM_PM">
+      <span class="AM">AM</span>
+      <span class="PM">PM</span>
+    </div>
+    <span class="time"></span>
+    <div class="toggle">
+      <i class="fa-solid fa-clock-rotate-left"></i>
+    </div>
   </div>
 `;
 

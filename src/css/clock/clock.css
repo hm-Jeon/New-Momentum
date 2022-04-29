@@ -2,22 +2,41 @@ section.center .clock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  font-size: 9rem;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
 
-section.center .clock:hover .toggle {
+section.center .clock > .date > span {
+  color: var(--dark-gray);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+section.center .clock > .clockDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 9rem;
+}
+
+section.center .clock > .clockDiv:hover > .toggle {
   visibility: visible;
 }
 
-section.center .clock .AM_PM {
+section.center .clock > .clockDiv > .AM_PM {
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -31,28 +50,28 @@ section.center .clock .AM_PM {
           align-items: center;
 }
 
-section.center .clock .AM_PM.active {
+section.center .clock > .clockDiv > .AM_PM.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-section.center .clock .AM_PM span {
+section.center .clock > .clockDiv > .AM_PM > span {
   color: var(--gray);
   font-size: 0.2em;
 }
 
-section.center .clock .AM_PM span.active {
+section.center .clock > .clockDiv > .AM_PM > span.active {
   color: var(--spotify-green);
   font-weight: 500;
 }
 
-section.center .clock .time {
+section.center .clock > .clockDiv > .time {
   font-weight: 500;
   padding-left: 0.05em;
 }
 
-section.center .clock .toggle {
+section.center .clock > .clockDiv > .toggle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,7 +85,7 @@ section.center .clock .toggle {
   visibility: hidden;
 }
 
-section.center .clock .toggle > i {
+section.center .clock > .clockDiv > .toggle > i {
   font-size: 1.5rem;
   color: var(--gray);
   cursor: pointer;
@@ -74,7 +93,7 @@ section.center .clock .toggle > i {
   transition: color 0.3s ease-in-out;
 }
 
-section.center .clock .toggle > i:hover {
+section.center .clock > .clockDiv > .toggle > i:hover {
   color: var(--spotify-green);
 }
 /*# sourceMappingURL=clock.css.map */
