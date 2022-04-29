@@ -6,6 +6,10 @@ section.center .clock {
       -ms-flex-align: center;
           align-items: center;
   font-size: 9rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 section.center .clock .AM_PM {

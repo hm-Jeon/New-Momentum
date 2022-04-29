@@ -3,6 +3,7 @@ section.center {
     display: flex;
     align-items: center;
     font-size: 9rem;
+    user-select: none;
 
     .AM_PM {
       display: flex;
