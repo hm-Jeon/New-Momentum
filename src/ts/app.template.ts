@@ -6,7 +6,6 @@ const template = `
         <h1>Current Weather</h1>
       </div>
       <div class="content">
-        {{current_weather}}
       </div>
     </div>
     <div class="daily-weather">
@@ -14,7 +13,6 @@ const template = `
         <h1>Daily Weather</h1>
       </div>
       <div class="content">
-        {{daily_weather}}
       </div>
     </div>
   </section>
@@ -22,11 +20,8 @@ const template = `
     <div class="greeting">
     </div>
     <div class="clock">
-      {{clock}}
     </div>
     <div class="quote">
-      <span class="text">FOREVER YOUNG</span>
-      <span class="author">BLACKPINK</span>
     </div>
   </section>
   <section class="right">

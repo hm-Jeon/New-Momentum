@@ -11,5 +11,21 @@ section.center .quote {
           align-items: center;
   position: absolute;
   bottom: 2rem;
+  width: 100%;
+  padding: 0 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+section.center .quote > .text {
+  font-family: "sriracha";
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.2em;
+  word-wrap: break-word;
 }
 /*# sourceMappingURL=quote.css.map */
