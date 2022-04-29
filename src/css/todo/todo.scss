@@ -64,8 +64,9 @@
           outline: none;
 
           &:checked {
-            & + div .text {
+            & + .text {
               text-decoration: line-through;
+              text-decoration-thickness: 2px;
               opacity: 0.3;
             }
           }
