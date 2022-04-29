@@ -5,6 +5,7 @@ section.center .clock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
   font-size: 9rem;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -12,10 +13,12 @@ section.center .clock {
           user-select: none;
 }
 
+section.center .clock:hover .toggle {
+  visibility: visible;
+}
+
 section.center .clock .AM_PM {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -26,6 +29,12 @@ section.center .clock .AM_PM {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+section.center .clock .AM_PM.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 section.center .clock .AM_PM span {
@@ -41,5 +50,31 @@ section.center .clock .AM_PM span.active {
 section.center .clock .time {
   font-weight: 500;
   padding-left: 0.05em;
+}
+
+section.center .clock .toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 100%;
+  height: 100%;
+  padding-left: 0.5rem;
+  visibility: hidden;
+}
+
+section.center .clock .toggle > i {
+  font-size: 1.5rem;
+  color: var(--gray);
+  cursor: pointer;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+section.center .clock .toggle > i:hover {
+  color: var(--spotify-green);
 }
 /*# sourceMappingURL=clock.css.map */
