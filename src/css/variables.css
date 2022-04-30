@@ -10,4 +10,6 @@
 
   --input-border-bottom: 2px solid var(--dark-gray);
   --box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 3px;
+
+  --font-size-transition: font-size 0.3s ease-in-out;
 }

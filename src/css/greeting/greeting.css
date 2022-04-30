@@ -57,6 +57,8 @@
           align-items: center;
   font-size: 2rem;
   font-weight: 500;
+  -webkit-transition: var(--font-size-transition);
+  transition: var(--font-size-transition);
 }
 
 .center .greeting > div > span {
@@ -118,5 +120,11 @@
 .center .greeting > i:hover {
   display: block;
   opacity: 1;
+}
+
+@media screen and (max-width: 1400px) {
+  .center .greeting > div {
+    font-size: 1.5rem;
+  }
 }
 /*# sourceMappingURL=greeting.css.map */

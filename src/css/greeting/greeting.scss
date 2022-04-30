@@ -25,6 +25,7 @@
       align-items: center;
       font-size: 2rem;
       font-weight: 500;
+      transition: var(--font-size-transition);
 
       & > span {
         padding-bottom: 0.1em;
@@ -64,6 +65,12 @@
       &:hover {
         display: block;
         opacity: 1;
+      }
+    }
+
+    @media screen and (max-width: 1400px) {
+      & > div {
+        font-size: 1.5rem;
       }
     }
   }

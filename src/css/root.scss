@@ -25,7 +25,6 @@ body {
 
     &.container {
       display: flex;
-      flex-direction: row;
       background-color: #ffffff;
       border-radius: 2rem;
 
@@ -90,3 +89,9 @@ body {
     }
   }
 }
+
+// @media screen and (max-width: 1200px) {
+//   .root {
+//
+//   }
+// }
