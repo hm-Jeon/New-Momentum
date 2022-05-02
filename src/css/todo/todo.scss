@@ -10,10 +10,10 @@
       @include inputHover(2px);
 
       input {
+        @include input(1.2rem, 500, 2em);
         padding: 0 0.5em;
         box-sizing: border-box;
         transition: var(--font-size-transition);
-        @include input(1.2rem, 500, 2em);
         @include inputFocus();
       }
     }

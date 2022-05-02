@@ -58,6 +58,14 @@ export default class Greeting {
     }
   };
 
+  private maxlengthContenteditable = (e: any) => {
+    const maxLength = 15;
+    const currentTextLength = e.target.innerText.length;
+    if (currentTextLength === maxLength && e.keyCode != 8) {
+      e.preventDefault();
+    }
+  };
+
   private render = () => {
     const username = localStorage.getItem(USERNAME_KEY);
     const hasData = !!username;
@@ -78,6 +86,7 @@ export default class Greeting {
       const input: HTMLElement = this.container.querySelector(".input") as HTMLElement;
       input.addEventListener("keypress", this.editUsername(input, "keypress"));
       input.addEventListener("focusout", this.editUsername(input, "focusout"));
+      input.addEventListener("keypress", this.maxlengthContenteditable);
     }
   };
 }

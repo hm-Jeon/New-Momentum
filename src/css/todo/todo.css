@@ -24,11 +24,6 @@
 }
 
 .right .todo-form form input {
-  padding: 0 0.5em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: var(--font-size-transition);
-  transition: var(--font-size-transition);
   width: 100%;
   padding: 0;
   border: none;
@@ -38,6 +33,11 @@
   font-weight: 500;
   line-height: 2em;
   background-color: transparent;
+  padding: 0 0.5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: var(--font-size-transition);
+  transition: var(--font-size-transition);
   border-radius: 0.1em;
 }
 

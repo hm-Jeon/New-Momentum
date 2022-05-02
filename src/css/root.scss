@@ -89,7 +89,7 @@ body {
     }
   }
 
-  @media screen and(max-width: 1000px) {
+  @media screen and(max-width: 1100px) {
     height: fit-content;
 
     .title {
@@ -103,13 +103,15 @@ body {
 
         section {
           &.center {
+            flex-direction: column;
+            width: auto;
             order: 0;
           }
 
           &.left {
             flex-direction: row;
             justify-content: space-between;
-            width: 100%;
+            width: auto;
             border-radius: 0;
             order: 1;
           }
@@ -138,6 +140,18 @@ body {
         section {
           &.left {
             flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and(max-width: 500px) {
+    section {
+      &.container {
+        section {
+          &.center {
+            padding: 1rem;
           }
         }
       }

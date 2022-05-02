@@ -4,6 +4,7 @@
   .greeting {
     position: absolute;
     top: 2rem;
+    max-width: 85%;
     text-align: center;
     user-select: none;
 
@@ -24,6 +25,7 @@
       position: relative;
       display: flex;
       align-items: center;
+      max-width: 100%;
       font-size: 2rem;
       font-weight: 500;
       transition: var(--font-size-transition);
@@ -37,6 +39,7 @@
           position: relative;
           margin-left: 0.3em;
           outline: none;
+          overflow-x: hidden;
           @include inputHover(3px);
           @include inputFocus();
         }
@@ -77,6 +80,45 @@
       form {
         input {
           font-size: 1.2rem;
+        }
+      }
+    }
+
+    @media screen and (max-width: 1100px) {
+      position: relative;
+      top: 0;
+
+      & > div {
+        font-size: 2rem;
+      }
+
+      form {
+        input {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      & > div {
+        font-size: 1.4rem;
+      }
+
+      form {
+        input {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      & > div {
+        font-size: 1.2rem;
+      }
+
+      form {
+        input {
+          font-size: 1rem;
         }
       }
     }

@@ -1,6 +1,7 @@
 .center .greeting {
   position: absolute;
   top: 2rem;
+  max-width: 85%;
   text-align: center;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -57,6 +58,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  max-width: 100%;
   font-size: 2rem;
   font-weight: 500;
   -webkit-transition: var(--font-size-transition);
@@ -73,6 +75,7 @@
   position: relative;
   margin-left: 0.3em;
   outline: none;
+  overflow-x: hidden;
   border-radius: 0.1em;
 }
 
@@ -130,6 +133,37 @@
   }
   .center .greeting form input {
     font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .center .greeting {
+    position: relative;
+    top: 0;
+  }
+  .center .greeting > div {
+    font-size: 2rem;
+  }
+  .center .greeting form input {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .center .greeting > div {
+    font-size: 1.4rem;
+  }
+  .center .greeting form input {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .center .greeting > div {
+    font-size: 1.2rem;
+  }
+  .center .greeting form input {
+    font-size: 1rem;
   }
 }
 /*# sourceMappingURL=greeting.css.map */
