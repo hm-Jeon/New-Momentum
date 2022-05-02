@@ -38,4 +38,11 @@ section.center .quote > .text {
     font-size: 0.9rem;
   }
 }
+
+@media screen and (max-width: 1100px) {
+  section.center .quote {
+    position: relative;
+    bottom: 0;
+  }
+}
 /*# sourceMappingURL=quote.css.map */
