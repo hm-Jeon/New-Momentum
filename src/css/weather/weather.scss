@@ -13,11 +13,13 @@
           flex-direction: row;
           align-items: center;
           justify-content: space-evenly;
+          font-size: 5rem;
           @include weatherDiv(100%, 1rem, 2rem);
+          transition: var(--font-size-transition);
 
           & > .icon {
             i {
-              font-size: 5rem;
+              font-size: 1em;
             }
           }
 
@@ -30,7 +32,9 @@
               &.city {
                 display: flex;
                 align-items: center;
-                font-size: 1.2rem;
+                font-size: 0.25em;
+                font-weight: 500;
+                white-space: nowrap;
 
                 i {
                   padding-right: 0.5em;
@@ -38,16 +42,48 @@
               }
 
               &.temp {
-                font-size: 4rem;
+                font-size: 0.8em;
                 font-weight: 500;
-                padding: 0.2em;
               }
 
               &.status {
-                font-size: 2rem;
+                font-size: 0.4em;
                 font-weight: 500;
+                padding: 0.4em 0;
               }
             }
+          }
+        }
+      }
+
+      @media screen and (max-width: 1400px) {
+        .content {
+          & > div {
+            padding: 0.5rem;
+            font-size: 4rem;
+          }
+        }
+      }
+
+      @media screen and (max-width: 1000px) {
+        width: 49%;
+        height: auto;
+
+        .content {
+          padding-bottom: 0;
+
+          & > div {
+            // flex-direction: column;
+            padding: 1rem;
+            font-size: 6rem;
+          }
+        }
+      }
+
+      @media screen and (max-width: 700px) {
+        .content {
+          & > div {
+            flex-direction: column;
           }
         }
       }
@@ -64,12 +100,15 @@
           flex-direction: column;
           justify-content: space-between;
           height: 100%;
+          font-size: 2rem;
+          transition: var(--font-size-transition);
 
           .day {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            @include weatherDiv(19%, 0 1rem, 1rem);
+            font-size: 1em;
+            @include weatherDiv(19%, 1rem, 1rem);
 
             & > .info {
               display: flex;
@@ -77,30 +116,51 @@
 
               & > .icon {
                 i {
-                  font-size: 2rem;
-                  width: 1.8em;
+                  font-size: 1em;
+                  width: 1.5em;
                 }
               }
 
               & > .dayOfWeek {
-                display: flex;
-                justify-content: center;
-                font-size: 1.1rem;
+                font-size: 0.6em;
                 font-weight: 500;
               }
             }
 
             & > .temp {
               display: flex;
-              align-items: center;
 
               & > div {
-                font-size: 1.2rem;
-                width: 2em;
+                width: 1.9em;
+                font-size: 0.6em;
+                text-align: center;
 
                 &.max {
                   font-weight: 500;
                 }
+              }
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 1400px) {
+        .content {
+          & > div {
+            font-size: 1.7rem;
+          }
+        }
+      }
+
+      @media screen and (max-width: 1000px) {
+        width: 49%;
+        .content {
+          & > div {
+            font-size: 2rem;
+
+            & > .day {
+              &:not(:last-child) {
+                margin-bottom: 0.1em;
               }
             }
           }

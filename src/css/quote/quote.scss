@@ -7,15 +7,22 @@ section.center {
     bottom: 2rem;
     width: 100%;
     padding: 0 1em;
+    font-family: "sriracha";
+    font-size: 1rem;
     box-sizing: border-box;
     user-select: none;
+    transition: var(--font-size-transition);
 
     & > .text {
-      font-family: "sriracha";
-      font-weight: 400;
+      font-family: inherit;
+      font-size: 1em;
       text-align: center;
       line-height: 1.2em;
       word-wrap: break-word;
+    }
+
+    @media screen and (max-width: 1400px) {
+      font-size: 0.9rem;
     }
   }
 }

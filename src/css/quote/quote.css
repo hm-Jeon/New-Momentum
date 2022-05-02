@@ -13,19 +13,29 @@ section.center .quote {
   bottom: 2rem;
   width: 100%;
   padding: 0 1em;
+  font-family: "sriracha";
+  font-size: 1rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-transition: var(--font-size-transition);
+  transition: var(--font-size-transition);
 }
 
 section.center .quote > .text {
-  font-family: "sriracha";
-  font-weight: 400;
+  font-family: inherit;
+  font-size: 1em;
   text-align: center;
   line-height: 1.2em;
   word-wrap: break-word;
+}
+
+@media screen and (max-width: 1400px) {
+  section.center .quote {
+    font-size: 0.9rem;
+  }
 }
 /*# sourceMappingURL=quote.css.map */

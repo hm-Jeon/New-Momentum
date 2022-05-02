@@ -17,7 +17,10 @@ body {
   background-color: var(--gray);
 
   .title {
+    font-size: 1.5rem;
     font-weight: 500;
+    white-space: nowrap;
+    transition: var(--font-size-transition);
   }
 
   section {
@@ -50,9 +53,6 @@ body {
 
             .title {
               color: inherit;
-              h1 {
-                font-size: 1.5rem;
-              }
             }
 
             .content {
@@ -78,11 +78,44 @@ body {
           background-color: var(--light-gray);
           border-radius: 0 2rem 2rem 0;
           box-shadow: rgba(0, 0, 0, 0.1) -2px 0 5px;
+        }
+      }
+    }
+  }
 
-          .title {
-            h1 {
-              font-size: 1.5rem;
-            }
+  @media screen and(max-width: 1400px) {
+    .title {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media screen and(max-width: 1000px) {
+    height: fit-content;
+
+    .title {
+      font-size: 1.5rem;
+    }
+
+    section {
+      height: fit-content;
+      &.container {
+        flex-direction: column;
+
+        section {
+          &.center {
+            order: 0;
+          }
+
+          &.left {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            border-radius: 0;
+            order: 1;
+          }
+
+          &.right {
+            order: 2;
           }
         }
       }

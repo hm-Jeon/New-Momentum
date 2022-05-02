@@ -1,6 +1,6 @@
 .right .todo-form {
   width: 100%;
-  padding: 1em 0 0;
+  padding: 1rem 0 0;
 }
 
 .right .todo-form form {
@@ -24,18 +24,20 @@
 }
 
 .right .todo-form form input {
+  padding: 0 0.5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: var(--font-size-transition);
+  transition: var(--font-size-transition);
   width: 100%;
   padding: 0;
   border: none;
   border-bottom: 2px solid var(--gray);
   font-family: inherit;
-  font-size: var(--todo-font-size);
+  font-size: 1.2rem;
   font-weight: 500;
   line-height: 2em;
   background-color: transparent;
-  padding: 0 0.5em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   border-radius: 0.1em;
 }
 
@@ -59,7 +61,7 @@
 }
 
 .right .todo-list .todo {
-  font-size: var(--todo-font-size);
+  font-size: 1.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -112,7 +114,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 100%;
-  padding: 0.15rem 0.3em;
+  padding: 0.15em 0.3em;
   font-weight: 500;
   word-break: break-all;
 }
@@ -129,5 +131,17 @@
 
 .right .todo-list .todo > .deleteBtn:hover {
   opacity: 1;
+}
+
+@media screen and (max-width: 1400px) {
+  .right .todo-form form input {
+    font-size: 1rem;
+  }
+  .right .todo-list .todo {
+    font-size: 1rem;
+  }
+  .right .todo-list .todo > div > input {
+    zoom: 1;
+  }
 }
 /*# sourceMappingURL=todo.css.map */

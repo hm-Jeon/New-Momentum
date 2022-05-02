@@ -20,6 +20,7 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  font-size: 5rem;
   height: 100%;
   padding: 1rem;
   background-color: var(--spotify-green);
@@ -31,6 +32,8 @@
   transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
   transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
   transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+  -webkit-transition: var(--font-size-transition);
+  transition: var(--font-size-transition);
 }
 
 .left div.current-weather .content > div:hover {
@@ -40,7 +43,7 @@
 }
 
 .left div.current-weather .content > div > .icon i {
-  font-size: 5rem;
+  font-size: 1em;
 }
 
 .left div.current-weather .content > div > .info {
@@ -63,7 +66,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.2rem;
+  font-size: 0.25em;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .left div.current-weather .content > div > .info > span.city i {
@@ -71,14 +76,44 @@
 }
 
 .left div.current-weather .content > div > .info > span.temp {
-  font-size: 4rem;
+  font-size: 0.8em;
   font-weight: 500;
-  padding: 0.2em;
 }
 
 .left div.current-weather .content > div > .info > span.status {
-  font-size: 2rem;
+  font-size: 0.4em;
   font-weight: 500;
+  padding: 0.4em 0;
+}
+
+@media screen and (max-width: 1400px) {
+  .left div.current-weather .content > div {
+    padding: 0.5rem;
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .left div.current-weather {
+    width: 49%;
+    height: auto;
+  }
+  .left div.current-weather .content {
+    padding-bottom: 0;
+  }
+  .left div.current-weather .content > div {
+    padding: 1rem;
+    font-size: 6rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .left div.current-weather .content > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .left div.daily-weather {
@@ -101,6 +136,9 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 100%;
+  font-size: 2rem;
+  -webkit-transition: var(--font-size-transition);
+  transition: var(--font-size-transition);
 }
 
 .left div.daily-weather .content > div .day {
@@ -113,8 +151,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 1em;
   height: 19%;
-  padding: 0 1rem;
+  padding: 1rem;
   background-color: var(--spotify-green);
   border-radius: 1rem;
   -webkit-box-sizing: border-box;
@@ -142,18 +181,12 @@
 }
 
 .left div.daily-weather .content > div .day > .info > .icon i {
-  font-size: 2rem;
-  width: 1.8em;
+  font-size: 1em;
+  width: 1.5em;
 }
 
 .left div.daily-weather .content > div .day > .info > .dayOfWeek {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 1.1rem;
+  font-size: 0.6em;
   font-weight: 500;
 }
 
@@ -161,17 +194,33 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .left div.daily-weather .content > div .day > .temp > div {
-  font-size: 1.2rem;
-  width: 2em;
+  width: 1.9em;
+  font-size: 0.6em;
+  text-align: center;
 }
 
 .left div.daily-weather .content > div .day > .temp > div.max {
   font-weight: 500;
+}
+
+@media screen and (max-width: 1400px) {
+  .left div.daily-weather .content > div {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .left div.daily-weather {
+    width: 49%;
+  }
+  .left div.daily-weather .content > div {
+    font-size: 2rem;
+  }
+  .left div.daily-weather .content > div > .day:not(:last-child) {
+    margin-bottom: 0.1em;
+  }
 }
 /*# sourceMappingURL=weather.css.map */
