@@ -107,4 +107,24 @@ section.center .clock > .clockDiv > .toggle > i:hover {
     font-size: 7rem;
   }
 }
+
+@media screen and (max-width: 1100px) {
+  section.center .clock {
+    padding: 5rem 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  section.center .clock {
+    padding: 4rem 0;
+    font-size: 6rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  section.center .clock {
+    padding: 3rem 0;
+    font-size: 5rem;
+  }
+}
 /*# sourceMappingURL=clock.css.map */
