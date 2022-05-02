@@ -69,11 +69,12 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0.5em;
+  margin-bottom: 0.2em;
   border-radius: 0.5em;
-  -webkit-transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out, var(--font-size-transition), -webkit-box-shadow 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, var(--font-size-transition), -webkit-box-shadow 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, var(--font-size-transition);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, var(--font-size-transition), -webkit-box-shadow 0.3s ease-in-out;
 }
 
 .right .todo-list .todo:hover {
@@ -84,10 +85,6 @@
 
 .right .todo-list .todo:hover > .deleteBtn {
   opacity: 0.2;
-}
-
-.right .todo-list .todo:not(:last-child) {
-  margin-bottom: 0.2em;
 }
 
 .right .todo-list .todo > div {
@@ -142,6 +139,18 @@
   }
   .right .todo-list .todo > div > input {
     zoom: 1;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .right .todo-form form input {
+    font-size: 1.2rem;
+  }
+  .right .todo-list .todo {
+    font-size: 1.2rem;
+  }
+  .right .todo-list .todo > div > input {
+    zoom: 1.25;
   }
 }
 /*# sourceMappingURL=todo.css.map */
