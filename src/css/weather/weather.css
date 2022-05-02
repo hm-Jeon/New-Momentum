@@ -4,6 +4,8 @@
 
 .left div.current-weather .content {
   padding: 1rem 0;
+  -webkit-transition: var(--font-size-transition);
+  transition: var(--font-size-transition);
 }
 
 .left div.current-weather .content > div {
@@ -28,12 +30,10 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   cursor: pointer;
-  -webkit-transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
-  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
-  -webkit-transition: var(--font-size-transition);
-  transition: var(--font-size-transition);
+  -webkit-transition: background-color 0.3s ease-in-out, var(--font-size-transition), -webkit-box-shadow 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, var(--font-size-transition), -webkit-box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, var(--font-size-transition);
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, var(--font-size-transition), -webkit-box-shadow 0.3s ease-in-out;
 }
 
 .left div.current-weather .content > div:hover {
@@ -181,10 +181,10 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   cursor: pointer;
-  -webkit-transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
-  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out, var(--font-size-transition), -webkit-box-shadow 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, var(--font-size-transition), -webkit-box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, var(--font-size-transition);
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, var(--font-size-transition), -webkit-box-shadow 0.3s ease-in-out;
 }
 
 .left div.daily-weather .content > div .day:hover {

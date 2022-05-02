@@ -7,6 +7,7 @@
 
       .content {
         padding: 1rem 0;
+        transition: var(--font-size-transition);
 
         & > div {
           display: flex;
@@ -15,7 +16,6 @@
           justify-content: space-evenly;
           font-size: 5rem;
           @include weatherDiv(100%, 1rem, 2rem);
-          transition: var(--font-size-transition);
 
           & > .icon {
             i {
