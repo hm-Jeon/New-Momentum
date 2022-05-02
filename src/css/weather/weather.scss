@@ -73,7 +73,6 @@
           padding-bottom: 0;
 
           & > div {
-            // flex-direction: column;
             padding: 1rem;
             font-size: 6rem;
           }
@@ -84,6 +83,28 @@
         .content {
           & > div {
             flex-direction: column;
+            font-size: 5rem;
+          }
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        width: auto;
+
+        .content {
+          padding: 1rem 0;
+
+          & > div {
+            // font-size: 4rem;
+            flex-direction: row;
+          }
+        }
+      }
+
+      @media screen and (max-width: 400px) {
+        .content {
+          & > div {
+            font-size: 4rem;
           }
         }
       }
@@ -161,6 +182,52 @@
             & > .day {
               &:not(:last-child) {
                 margin-bottom: 0.1em;
+              }
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 700px) {
+        .content {
+          & > div {
+            font-size: 1.7rem;
+          }
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        width: auto;
+
+        .content {
+          & > div {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      @media screen and (max-width: 400px) {
+        .content {
+          & > div {
+            font-size: 1.7rem;
+          }
+        }
+      }
+
+      @media screen and (max-width: 350px) {
+        .content {
+          & > div {
+            font-size: 2rem;
+
+            .day {
+              & > .info {
+                & > .icon {
+                  font-size: 0.8em;
+                }
+
+                & > .dayOfWeek {
+                  display: none;
+                }
               }
             }
           }

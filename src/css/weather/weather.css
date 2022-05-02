@@ -113,6 +113,28 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .left div.current-weather {
+    width: auto;
+  }
+  .left div.current-weather .content {
+    padding: 1rem 0;
+  }
+  .left div.current-weather .content > div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .left div.current-weather .content > div {
+    font-size: 4rem;
   }
 }
 
@@ -221,6 +243,39 @@
   }
   .left div.daily-weather .content > div > .day:not(:last-child) {
     margin-bottom: 0.1em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .left div.daily-weather .content > div {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .left div.daily-weather {
+    width: auto;
+  }
+  .left div.daily-weather .content > div {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .left div.daily-weather .content > div {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .left div.daily-weather .content > div {
+    font-size: 2rem;
+  }
+  .left div.daily-weather .content > div .day > .info > .icon {
+    font-size: 0.8em;
+  }
+  .left div.daily-weather .content > div .day > .info > .dayOfWeek {
+    display: none;
   }
 }
 /*# sourceMappingURL=weather.css.map */

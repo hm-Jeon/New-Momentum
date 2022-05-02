@@ -163,4 +163,28 @@ body {
             order: 2;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .root .title {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .root .title {
+    font-size: 1.5rem;
+  }
+  .root section.container section.left {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .root .title {
+    font-size: 1.3rem;
+  }
+}
 /*# sourceMappingURL=root.css.map */
