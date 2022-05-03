@@ -1,6 +1,4 @@
 import * as Handlebars from "handlebars";
-// SCSS 적용
-import "../css/style.scss";
 
 import template from "./app.template";
 
