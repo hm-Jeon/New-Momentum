@@ -79,17 +79,25 @@ section.center {
     }
 
     @media screen and (max-width: 1100px) {
-      padding: 5rem 0;
+      margin: 5rem 0;
     }
 
     @media screen and (max-width: 700px) {
-      padding: 4rem 0;
+      margin: 4rem 0;
       font-size: 6rem;
     }
 
     @media screen and (max-width: 500px) {
-      padding: 3rem 0;
+      margin: 3rem 0;
       font-size: 5.5rem;
+    }
+
+    @media screen and (max-width: 500px) {
+      font-size: 5em;
+    }
+
+    @media screen and (max-width: 400px) {
+      font-size: 4em;
     }
   }
 }

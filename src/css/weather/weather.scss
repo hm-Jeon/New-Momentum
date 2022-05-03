@@ -82,7 +82,7 @@
         .content {
           & > div {
             flex-direction: column;
-            font-size: 5rem;
+            font-size: 4rem;
           }
         }
       }
@@ -94,8 +94,18 @@
           padding: 1rem 0;
 
           & > div {
-            // font-size: 4rem;
             flex-direction: row;
+            padding: 2rem 3rem;
+            font-size: 4.5rem;
+          }
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        .content {
+          & > div {
+            padding: 2rem;
+            font-size: 4rem;
           }
         }
       }
@@ -103,7 +113,7 @@
       @media screen and (max-width: 400px) {
         .content {
           & > div {
-            font-size: 4rem;
+            font-size: 3rem;
           }
         }
       }
@@ -188,8 +198,14 @@
 
       @media screen and (max-width: 700px) {
         .content {
+          height: 100%;
+
           & > div {
             font-size: 1.7rem;
+
+            & > .day {
+              padding: 0.5rem 1rem;
+            }
           }
         }
       }
@@ -199,7 +215,23 @@
 
         .content {
           & > div {
-            font-size: 2rem;
+            font-size: 1.8rem;
+
+            & > .day {
+              padding: 1rem 2rem;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        .content {
+          & > div {
+            font-size: 1.7rem;
+
+            & > .day {
+              padding: 0.5rem 1rem;
+            }
           }
         }
       }
@@ -207,27 +239,18 @@
       @media screen and (max-width: 400px) {
         .content {
           & > div {
-            font-size: 1.7rem;
-          }
-        }
-      }
+            font-size: 1.5rem;
 
-      @media screen and (max-width: 350px) {
-        .content {
-          & > div {
-            font-size: 2rem;
+            // .day {
+            //   & > .info {
+            //     justify-content: space-between;
+            //     width: 100%;
+            //   }
 
-            .day {
-              & > .info {
-                & > .icon {
-                  font-size: 0.8em;
-                }
-
-                & > .dayOfWeek {
-                  display: none;
-                }
-              }
-            }
+            //   & > .temp {
+            //     display: none;
+            //   }
+            // }
           }
         }
       }

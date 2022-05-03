@@ -114,6 +114,28 @@
     @media screen and (max-width: 500px) {
       & > div {
         font-size: 1.2rem;
+
+        & > span {
+          &.input {
+            @include inputHover(2px);
+          }
+        }
+      }
+
+      form {
+        input {
+          font-size: 1rem;
+        }
+      }
+
+      & > i {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      & > div {
+        font-size: 1rem;
       }
 
       form {

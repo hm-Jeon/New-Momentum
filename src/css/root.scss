@@ -115,6 +115,7 @@ body {
             justify-content: space-between;
             width: auto;
             border-radius: 0;
+            box-shadow: none;
             order: 1;
           }
 
@@ -122,6 +123,7 @@ body {
             width: auto;
             max-height: 400px;
             border-radius: 0 0 2rem 2rem;
+            box-shadow: none;
             order: 2;
           }
         }
@@ -152,11 +154,15 @@ body {
   }
 
   @media screen and(max-width: 500px) {
+    .title {
+      font-size: 1.2rem;
+    }
+
     section {
       &.container {
         section {
           &.center {
-            padding: 1rem;
+            padding: 2rem 1rem;
           }
         }
       }
@@ -165,13 +171,7 @@ body {
 
   @media screen and(max-width: 400px) {
     .title {
-      font-size: 1.3rem;
+      font-size: 1rem;
     }
   }
 }
-
-// @media screen and (max-width: 1200px) {
-//   .root {
-//
-//   }
-// }
