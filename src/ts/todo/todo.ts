@@ -1,4 +1,4 @@
-import TypeIt from "typeit";
+// import TypeIt from "typeit";
 import template from "./todo.template";
 
 const TODOS_KEY = "todos";
@@ -52,14 +52,14 @@ export default class Todo {
     this.render();
 
     const text: HTMLElement = document.getElementById(`${todoId}`) as HTMLElement;
-    new (TypeIt as any)(text.querySelector(".text"), {
-      speed: 100,
-      lifeLike: true,
-      loop: false,
-      afterComplete: (instance: TypeItObj) => {
-        instance.destroy();
-      },
-    }).go();
+    // new (TypeIt as any)(text.querySelector(".text"), {
+    //   speed: 100,
+    //   lifeLike: true,
+    //   loop: false,
+    //   afterComplete: (instance: TypeItObj) => {
+    //     instance.destroy();
+    //   },
+    // }).go();
   };
 
   private deleteTodo = (event: Event) => {
