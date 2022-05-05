@@ -21,23 +21,21 @@ class App {
 
   constructor(container: string) {
     this.container = document.querySelector(container) as HTMLElement;
-
     this.render();
   }
 
   private render = () => {
     this.container.innerHTML = template({});
-
-    const clock = new Clock(CLOCK_CLASS);
-
-    const weather = new Weather(CURRENT_WEATHER_CLASS, DAILY_WEATHER_CLASS);
-
-    const greeting = new Greeting(GREETING_CLASS);
-
-    const todo = new Todo(TODO_LIST_CLASS);
-
-    const quote = new Quote(QUOTE_CLASS);
   };
 }
 
-const app = new App(ROOT_CLASS);
+function main() {
+  const app = new App(ROOT_CLASS);
+  const clock = new Clock(CLOCK_CLASS);
+  const weather = new Weather(CURRENT_WEATHER_CLASS, DAILY_WEATHER_CLASS);
+  const greeting = new Greeting(GREETING_CLASS);
+  const todo = new Todo(TODO_LIST_CLASS);
+  const quote = new Quote(QUOTE_CLASS);
+}
+
+document.addEventListener("DOMContentLoaded", main);
