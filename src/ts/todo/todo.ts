@@ -1,4 +1,3 @@
-// import TypeIt from "typeit";
 import template from "./todo.template";
 
 const TODOS_KEY = "todos";
@@ -9,25 +8,17 @@ interface TodoObj {
   checked: boolean;
 }
 
-interface TypeItObj {
-  speed?: number;
-  lifeLike?: boolean;
-  loop?: false;
-  destroy: Function;
-  afterComplete?: Function;
-}
-
 export default class Todo {
   private container: HTMLElement;
-  private input: HTMLInputElement;
+  private form: HTMLInputElement;
   private todos: TodoObj[];
 
   constructor(container: string) {
     this.container = document.querySelector(container) as HTMLElement;
     this.todos = JSON.parse(localStorage.getItem(TODOS_KEY) as string) || [];
 
-    this.input = document.querySelector(".todo-form") as HTMLInputElement;
-    this.input.addEventListener("submit", this.writeTodo);
+    this.form = document.querySelector(".todo-form") as HTMLInputElement;
+    this.form.addEventListener("submit", this.writeTodo);
 
     this.render();
   }
@@ -35,7 +26,7 @@ export default class Todo {
   private writeTodo = (event: SubmitEvent) => {
     event.preventDefault();
 
-    const input: HTMLInputElement = this.input.querySelector("input") as HTMLInputElement;
+    const input: HTMLInputElement = this.form.querySelector("input") as HTMLInputElement;
     const todo: string = input.value;
     input.value = "";
     input.blur();
@@ -44,22 +35,12 @@ export default class Todo {
 
     this.todos.push({
       id: todoId,
-      todo: todo,
+      todo,
       checked: false,
     });
 
     this.saveTodos();
     this.render();
-
-    const text: HTMLElement = document.getElementById(`${todoId}`) as HTMLElement;
-    // new (TypeIt as any)(text.querySelector(".text"), {
-    //   speed: 100,
-    //   lifeLike: true,
-    //   loop: false,
-    //   afterComplete: (instance: TypeItObj) => {
-    //     instance.destroy();
-    //   },
-    // }).go();
   };
 
   private deleteTodo = (event: Event) => {
@@ -74,7 +55,7 @@ export default class Todo {
     this.render();
   };
 
-  private checkHandler = (event: Event) => {
+  private checkEventHandler = (event: Event) => {
     const todo: HTMLElement = (event.target as HTMLElement).closest(".todo") as HTMLElement;
     const todoId: number = +todo.id;
     const checkBox = event.target as HTMLInputElement;
@@ -93,17 +74,21 @@ export default class Todo {
     localStorage.setItem(TODOS_KEY, JSON.stringify(this.todos));
   };
 
-  private render = () => {
-    this.container.innerHTML = template({ todos: this.todos });
-
+  private setEventHandler = (): void => {
     const deleteBtnList = this.container.querySelectorAll(".deleteBtn");
     deleteBtnList.forEach(deleteBtn => {
       deleteBtn.addEventListener("click", this.deleteTodo);
     });
 
-    const checkBoxList = document.querySelectorAll(".todo .checkbox");
+    const checkBoxList = this.container.querySelectorAll(".todo .checkbox");
     checkBoxList.forEach(checkBox => {
-      checkBox.addEventListener("change", this.checkHandler);
+      checkBox.addEventListener("change", this.checkEventHandler);
     });
+  };
+
+  private render = () => {
+    this.container.innerHTML = template({ todos: this.todos });
+
+    this.setEventHandler();
   };
 }
