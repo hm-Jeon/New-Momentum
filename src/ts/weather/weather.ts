@@ -46,7 +46,7 @@ export default class Weather {
     navigator.geolocation.getCurrentPosition(this.GeoOk);
   }
 
-  GeoOk = (position: WeatherObj) => {
+  GeoOk = (position: WeatherObj): void => {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
 
@@ -54,9 +54,15 @@ export default class Weather {
     this.renderDailyWeather(lat, lon);
   };
 
-  private renderCurrentWeather = async (lat: number, lon: number) => {
+  private getCurrentWeather = async (lat: number, lon: number): Promise<WeatherObj> => {
     const url: string = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=${METRIC_KEY}`;
     const data: WeatherObj = (await axios.get(url)).data;
+
+    return data;
+  };
+
+  private renderCurrentWeather = async (lat: number, lon: number): Promise<void> => {
+    const data: WeatherObj = await this.getCurrentWeather(lat, lon);
 
     this.render(this.currentWeatherContainer, currentWeatherTemplate, {
       temp: `${Math.round(data.main.temp)}°`,
@@ -66,11 +72,11 @@ export default class Weather {
     });
   };
 
-  private renderDailyWeather = async (lat: number, lon: number) => {
+  private getDailyWeather = async (lat: number, lon: number): Promise<WeatherObj[]> => {
     const exclude = "current,minutely,hourly,alerts";
     const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${exclude}&appid=${API_KEY}&units=${METRIC_KEY}`;
     const dataList: WeatherObj = (await axios.get(url)).data.daily;
-    const dailyWeatherList: [WeatherObj?] = [];
+    const dailyWeatherList: WeatherObj[] = [];
 
     dataList.forEach((data: WeatherObj, index: number) => {
       if (index < 5) {
@@ -89,6 +95,12 @@ export default class Weather {
       }
     });
 
+    return dailyWeatherList;
+  };
+
+  private renderDailyWeather = async (lat: number, lon: number): Promise<void> => {
+    const dailyWeatherList: WeatherObj[] = await this.getDailyWeather(lat, lon);
+
     this.render(this.dailyWeatherContainer, dailyWeatherTemplate, {
       dailyWeatherList: dailyWeatherList,
     });
@@ -98,7 +110,7 @@ export default class Weather {
     target: HTMLElement,
     template: HandlebarsTemplateDelegate,
     data: WeatherObj
-  ) => {
+  ): void => {
     target.innerHTML = template(data);
   };
 }
