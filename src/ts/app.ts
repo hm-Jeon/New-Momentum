@@ -33,7 +33,7 @@ function main() {
   const app = new App(ROOT_CLASS);
   const clock = new Clock(CLOCK_CLASS);
   const weather = new Weather(CURRENT_WEATHER_CLASS, DAILY_WEATHER_CLASS);
-  const greeting = new Greeting(GREETING_CLASS);
+  const greeting = new Greeting(GREETING_CLASS, 15);
   const todo = new Todo(TODO_LIST_CLASS);
   const quote = new Quote(QUOTE_CLASS);
 }
