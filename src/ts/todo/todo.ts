@@ -1,12 +1,7 @@
 import template from "./todo.template";
+import { TodoObj } from "../types";
 
 const TODOS_KEY = "todos";
-
-interface TodoObj {
-  id: number;
-  todo: string;
-  checked: boolean;
-}
 
 export default class Todo {
   private container: HTMLElement;

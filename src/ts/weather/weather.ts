@@ -1,15 +1,18 @@
 import currentWeatherTemplate from "./current_weather.template";
 import dailyWeatherTemplate from "./daily_weather.template";
+import {
+  CurrentWeatherDataObj,
+  CurrentWeatherObj,
+  DailyWeatherDataObj,
+  DailyWeatherObj,
+  PositionObj,
+} from "../types";
 import axios from "axios";
 
 const API_KEY = "1ef5279831e294aefc64dfb9b55f20a1";
 const METRIC_KEY = "metric";
 
-interface WeatherObj {
-  [key: string]: any;
-}
-
-const iconMap: WeatherObj = {
+const iconMap: { [key: string]: string } = {
   "01d": "fa-solid fa-sun",
   "02d": "fa-solid fa-cloud-sun",
   "03d": "fa-solid fa-cloud",
@@ -46,7 +49,7 @@ export default class Weather {
     navigator.geolocation.getCurrentPosition(this.GeoOk);
   }
 
-  GeoOk = (position: WeatherObj): void => {
+  GeoOk = (position: PositionObj): void => {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
 
@@ -54,38 +57,42 @@ export default class Weather {
     this.renderDailyWeather(lat, lon);
   };
 
-  private getCurrentWeather = async (lat: number, lon: number): Promise<WeatherObj> => {
+  private getCurrentWeather = async (lat: number, lon: number): Promise<CurrentWeatherDataObj> => {
     const url: string = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=${METRIC_KEY}`;
-    const data: WeatherObj = (await axios.get(url)).data;
+    const data: CurrentWeatherDataObj = (await axios.get(url)).data;
 
     return data;
   };
 
   private renderCurrentWeather = async (lat: number, lon: number): Promise<void> => {
-    const data: WeatherObj = await this.getCurrentWeather(lat, lon);
+    const data: CurrentWeatherDataObj = await this.getCurrentWeather(lat, lon);
 
-    this.render(this.currentWeatherContainer, currentWeatherTemplate, {
+    const currentWeather: CurrentWeatherObj = {
       temp: `${Math.round(data.main.temp)}°`,
       status: data.weather[0].main,
       city: data.name,
       icon: iconMap[data.weather[0].icon],
+    };
+
+    this.render(this.currentWeatherContainer, currentWeatherTemplate, {
+      currentWeather,
     });
   };
 
-  private getDailyWeather = async (lat: number, lon: number): Promise<WeatherObj[]> => {
+  private getDailyWeather = async (lat: number, lon: number): Promise<DailyWeatherObj[]> => {
     const exclude = "current,minutely,hourly,alerts";
     const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${exclude}&appid=${API_KEY}&units=${METRIC_KEY}`;
-    const dataList: WeatherObj = (await axios.get(url)).data.daily;
-    const dailyWeatherList: WeatherObj[] = [];
+    const dataList: DailyWeatherDataObj[] = (await axios.get(url)).data.daily;
+    const dailyWeatherList: DailyWeatherObj[] = [];
 
-    dataList.forEach((data: WeatherObj, index: number) => {
+    dataList.forEach((data: DailyWeatherDataObj, index: number) => {
       if (index < 5) {
-        const dayofWeek = new Date(data.dt * 1000).toLocaleDateString("en", {
-          weekday: "short",
+        const dayofWeek = new Date(data.dt * 1000).toLocaleDateString("kr", {
+          weekday: "long",
         });
 
-        const dailyWeather: WeatherObj = {
-          dayOfWeek: index === 0 ? "Today" : index === 1 ? "Tomorrow" : dayofWeek,
+        const dailyWeather: DailyWeatherObj = {
+          dayOfWeek: index === 0 ? "오늘" : index === 1 ? "내일" : dayofWeek,
           minTemp: `${Math.round(data.temp.min)}°`,
           maxTemp: `${Math.round(data.temp.max)}°`,
           icon: iconMap[data.weather[0].icon],
@@ -99,17 +106,18 @@ export default class Weather {
   };
 
   private renderDailyWeather = async (lat: number, lon: number): Promise<void> => {
-    const dailyWeatherList: WeatherObj[] = await this.getDailyWeather(lat, lon);
+    const dailyWeatherList: DailyWeatherObj[] = await this.getDailyWeather(lat, lon);
 
+    console.log(...dailyWeatherList);
     this.render(this.dailyWeatherContainer, dailyWeatherTemplate, {
-      dailyWeatherList: dailyWeatherList,
+      dailyWeatherList,
     });
   };
 
   private render = (
     target: HTMLElement,
     template: HandlebarsTemplateDelegate,
-    data: WeatherObj
+    data: { [key: string]: DailyWeatherObj[] } | { [key: string]: CurrentWeatherObj }
   ): void => {
     target.innerHTML = template(data);
   };
