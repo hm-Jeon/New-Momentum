@@ -35,7 +35,7 @@ export default class Clock {
   // Date
   private getDate = (): string => {
     const date: Date = new Date();
-    const dayofWeek = date.toLocaleDateString("en", {
+    const dayofWeek = date.toLocaleDateString("kr", {
       weekday: "long",
       year: "numeric",
       month: "long",
