@@ -80,9 +80,16 @@ export default class Clock {
   };
 
   private convertTo12HoursSystem = (hours: number): string => {
+    const AMorPM: string = hours >= 12 ? "PM" : "AM";
+
+    this.toggleAMPM(AMorPM);
+
+    return String(hours % 12) === "0" ? "12" : String(hours % 12);
+  };
+
+  private toggleAMPM(AMorPM: string): void {
     const AM: HTMLElement = this.container.querySelector(AM_CLASS) as HTMLElement;
     const PM: HTMLElement = this.container.querySelector(PM_CLASS) as HTMLElement;
-    const AMorPM: string = hours > 12 ? "PM" : "AM";
 
     if (AMorPM === "AM") {
       AM.classList.add(ACTIVE_KEY);
@@ -91,9 +98,7 @@ export default class Clock {
       AM.classList.remove(ACTIVE_KEY);
       PM.classList.add(ACTIVE_KEY);
     }
-
-    return String(hours % 12) === "0" ? "12" : String(hours % 12);
-  };
+  }
 
   private renderTime = (now: string): void => {
     this.timeSpan.innerHTML = now;
