@@ -108,7 +108,6 @@ export default class Weather {
   private renderDailyWeather = async (lat: number, lon: number): Promise<void> => {
     const dailyWeatherList: DailyWeatherObj[] = await this.getDailyWeather(lat, lon);
 
-    console.log(...dailyWeatherList);
     this.render(this.dailyWeatherContainer, dailyWeatherTemplate, {
       dailyWeatherList,
     });
